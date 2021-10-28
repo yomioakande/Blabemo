@@ -208,7 +208,7 @@ img {
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 100%;
+  width: 60%;
 }
 .hero-img .review {
   position: absolute;
@@ -716,7 +716,8 @@ footer p {
   }
   .hero-img {
     position: relative;
-    width: 90vw;
+    width: 105vw;
+    margin: 0 -15px 0 -30px;
     height: auto;
   }
   .hero-img .review {
