@@ -1020,13 +1020,15 @@ img {
   color: #a5a5a5;
   cursor: pointer;
   position: relative;
+  vertical-align: middle;
 }
 .input-rating .icon {
   height: 35px;
   width: 35px;
   margin: 0 auto 5px;
 }
-.input-rating input[type="radio"] {
+.input-rating input[type="radio"],
+.blab-ratings input[type="radio"] {
   display: none;
 }
 .star1 .icon {
@@ -1064,9 +1066,11 @@ img {
 .star5 .icon.show {
   background: url("../images/indifferent.png") no-repeat center;
 }
-.input-rating h3 {
+.input-rating #rating {
   font-family: "Poppins-SemiBold";
   color: #8d8d8d;
+  font-size: 2.5rem;
+  margin-top: -20px;
 }
 .review-tags-container {
   margin: 25px 0 45px;
@@ -1197,7 +1201,7 @@ img {
 
 /* ########## Claim Business Modal ########## */
 #claimBusinessModal .modal-content {
-  padding: 60px 30px;
+  padding: 60px 30px 30px;
 }
 #claimBusinessModal .btn-close {
   background-color: #f4f4f4;
@@ -1211,6 +1215,18 @@ img {
 }
 .modal-form {
   margin-top: 25px;
+}
+.payment-option h6 {
+  font-size: 14px;
+  color: #aaaaaa;
+}
+.payment-option label {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 25px;
+}
+.payment-option .checkbox {
+  color: #aaaaaa !important;
 }
 /* ########## Claim Business Modal End ########## */
 
@@ -1408,6 +1424,25 @@ img {
 .blab-message textarea::placeholder {
   color: #d6d6d6;
 }
+.blab-message-footer {
+  display: flex;
+}
+.blab-ratings {
+  background-color: #fbfbfb;
+  padding: 10px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+.blab-ratings svg {
+  fill: #d9d9d9;
+  width: 25px;
+  height: 25px;
+  margin-right: 7px;
+}
+.blab-ratings svg:hover {
+  fill: #ff6634;
+}
 .blabs,
 .handles {
   margin: 40px 0 30px;
@@ -1434,7 +1469,13 @@ img {
   font-family: "Montserrat-Bold";
   margin-bottom: 0;
 }
-.blab-info-top span {
+.blab-info-top h5 .rating {
+  display: inline-block;
+  margin-left: 15px;
+  color: #000000;
+  font-size: 10px;
+}
+.blab-info-top > span {
   color: #d4d4d4;
   font-size: 12px;
 }
@@ -1453,9 +1494,22 @@ img {
   margin-right: 15px;
   cursor: pointer;
 }
-.blab-icons ul li:hover i,
-.blab-icons ul li:active i {
-  color: #ff6634;
+.blab-icons svg,
+.blab-icons ul li svg {
+  cursor: pointer;
+  fill: #a3a3a3;
+}
+.blab-icons svg:hover,
+.blab-icons ul li.active svg,
+.blab-icons ul li:hover svg {
+  fill: #ff6634;
+}
+.verified-badge {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background: url("../images/badge.svg") no-repeat;
+  vertical-align: middle;
 }
 .blab-groups li {
   color: #ff6634;
@@ -2011,7 +2065,6 @@ img {
 }
 .review-text {
   font-size: 12px;
-  width: 75%;
 }
 .review-tags {
   display: -webkit-box;
@@ -2549,7 +2602,8 @@ footer p {
   margin-bottom: 10px;
   text-align: left;
 }
-.review-tag .checkbox {
+.review-tag .checkbox,
+.payment-option .checkbox {
   font-size: 14px;
   color: #000000;
   font-family: "Montserrat-Medium";
@@ -2570,7 +2624,8 @@ footer p {
   border-radius: 4px;
   border: 1px solid #d8d8d8;
 }
-.review-tag .checkmark {
+.review-tag .checkmark,
+.payment-option .checkmark {
   height: 20px;
   width: 20px;
   border-radius: 10px;
@@ -2583,7 +2638,8 @@ footer p {
   background-color: #ff6634;
   border: 1px solid #ff6634;
 }
-.review-tag .checkbox input:checked ~ .checkmark {
+.review-tag .checkbox input:checked ~ .checkmark,
+.payment-option .checkbox input:checked ~ .checkmark {
   background-color: #fff;
   border: 2px solid #ff6634;
 }
@@ -2606,7 +2662,8 @@ footer p {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.review-tag .checkbox .checkmark:after {
+.review-tag .checkbox .checkmark:after,
+.payment-option .checkbox .checkmark:after {
   width: 12px;
   height: 12px;
   left: 2px;
