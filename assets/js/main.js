@@ -1,8 +1,8 @@
 $(function () {
   function sticky() {
-    if ($(window).scrollTop() >= 15) {
+    if ($(window).scrollTop() >= 30) {
       $(".nav-header").addClass("sticky");
-    } else if ($(window).scrollTop() < 15) {
+    } else if ($(window).scrollTop() < 30) {
       $(".nav-header").removeClass("sticky");
     }
   }
@@ -24,6 +24,57 @@ $(document).mouseup(function (e) {
     $(".navigation").toggleClass("show");
     $(".nav-header").toggleClass("shadow");
   });
+});
+
+// Account dropdown
+$(document).mouseup(function (e) {
+  var fnav = $(".navbar-account");
+  if (!fnav.is(e.target) && fnav.has(e.target).length === 0) {
+    $(".account-dropdown").removeClass("show");
+  }
+});
+$(".navbar-account").on("click", function () {
+  $(".account-dropdown").toggleClass("show");
+});
+
+// Cookies Alert Dialog
+setTimeout(function () {
+  $(".cookies-alert").show();
+}, 2000);
+$(".cookies-close").click(function () {
+  $(".cookies-alert").hide();
+});
+
+// BUSINESS TAB
+$(".recentReviewsTab").hide();
+$("#submitReviewTab").click(function () {
+  $(this).addClass("active");
+  $("#recentReviewsTab").removeClass("active");
+  $(".recentReviewsTab").hide();
+  $(".submitReviewTab").show();
+});
+
+$("#recentReviewsTab").click(function () {
+  $(this).addClass("active");
+  $("#submitReviewTab").removeClass("active");
+  $(".submitReviewTab").hide();
+  $(".recentReviewsTab").show();
+});
+
+// BLAB TIMELINE POST TAB
+$(".blabCommentTab").hide();
+$("#blabPostTab").click(function () {
+  $(this).addClass("active");
+  $("#blabCommentTab").removeClass("active");
+  $(".blabCommentTab").hide();
+  $(".blabPostTab").show();
+});
+
+$("#blabCommentTab").click(function () {
+  $(this).addClass("active");
+  $("#blabPostTab").removeClass("active");
+  $(".blabPostTab").hide();
+  $(".blabCommentTab").show();
 });
 
 var $animation_elements = $(".animation-element");
