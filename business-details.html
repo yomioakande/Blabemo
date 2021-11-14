@@ -116,7 +116,7 @@
               <h3>Starbucks</h3>
               <div class="claimed">
                 <i class="fa fa-check-circle"></i>
-                Claimed
+                <span>Claimed</span>
               </div>
               <div class="rating">
                 <img src="assets/images/dissatisfied.png" alt="" />
@@ -538,8 +538,15 @@
         <div class="col-lg-8">
           <p>
             We use cookies and trackers to improve your browsing experience. You
-            accept the use of cookies by clicking on the "Accept" button.
-            Without your consent, no cookies or trackers will be used (excluding
+            accept to have read our
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#cookiePolicyModal"
+              >cookie policy</a
+            >
+            and the use of cookies by clicking on the "Accept" button. Without
+            your consent, no cookies or trackers will be used (excluding
             strictly necessary cookies).
           </p>
         </div>
@@ -550,6 +557,127 @@
             <button class="refuse-cookies-btn" type="button">Refuse</button>
           </div>
           <span class="cookies-close">&times;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="cookiePolicyModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body">
+            <h5 class="header">Cookie Policy</h5>
+            <div class="terms">
+              <h3>Collection of Information</h3>
+              <p>
+                The services that connect lorem ipsum our firm is a long
+                established fact that a reader will be distracted by the
+                readable of a page when looking at its layout the point of using
+                lorem ipsum is that it has a more orless normal distribution of
+                letters as opposed to using content here making it lookOur firm
+                is a long established fact that a reader will be distracted by
+                the readable of a page when looking at its layout the point of
+                using lorem ipsum is that it has a more orless normal
+                distribution of letters as opposed to using content here making
+                it look the point of using lorem ipsum is that it has a more
+                orless normal distribution of letters as opposed to using
+                content here making it lookOur firm is a long lorem ipsum is
+                that it has a more orless normal distribution of letters as
+                opposed to using content here making it lookOur firm is a long
+                established fact that a reader will be distracted by the
+                readable of a page
+              </p>
+              <p>
+                Lorem ipsum our firm is a long established fact that a reader
+                will be distracted by the readable of a page when looking at its
+                layout the point of using lorem ipsum is that it has a more
+                orless normal distribution of letters as opposed to using
+                content here making it lookOur firm is a long established fact
+                that a reader will be distracted by the readable of a page when
+                looking.
+              </p>
+            </div>
+
+            <div class="terms">
+              <h3>How We Use Information</h3>
+              <p>
+                <span>A. Responsibility for Your Content.</span>
+                lorem ipsum our firm is a long established fact that a reader
+                will be distracted by the readable of a page when looking at its
+                layout the point of using lorem ipsum is that it has a more
+                orless normal distribution of letters as opposed to using
+                content here making it lookOur firm is a long established fact
+                that a reader will be distracted by the readable of a page when
+                looking at its layout the.
+              </p>
+              <p>
+                <span>B. Responsibility for Your Content.</span>
+                lorem ipsum our firm is a long established fact that a reader
+                will be distracted by the readable of a page when looking at its
+                layout the point of using lorem ipsum is that it has a more
+                orless normal distribution of letters as opposed to using
+                content here making it look our firm is a long established fact
+                that a reader will be distracted by the readable of a page when
+                looking at its layout the.
+              </p>
+            </div>
+
+            <div class="terms">
+              <h3>How We Share Information</h3>
+              <p>
+                The services that connect lorem ipsum our firm is a long
+                established fact that a reader will be distracted by the
+                readable of a page when looking at its layout the point of using
+                lorem ipsum is that it has a more orless normal distribution of
+                letters as opposed to using content here making it lookOur firm
+                is a long established fact that a reader will be distracted by
+                the readable of a page when looking at its layout the point of
+                using lorem ipsum is that it has a more or less normal
+                distribution of letters as opposed to using content here making
+                it look the point of using lorem ipsum is that it has a more
+                orless normal distribution of letters as opposed to using
+                content here making it look our firm is a long lorem ipsum is
+                that it has a more orless normal distribution of letters as
+                opposed to using content here making it look our firm is a long
+                established fact that a reader will be distracted by the
+                readable of a page
+              </p>
+            </div>
+
+            <div class="terms">
+              <h3>Cookies and Trackers</h3>
+              <p>
+                The services that connect lorem ipsum our firm is a long
+                established fact that a reader will be distracted by the
+                readable of a page when looking at its layout the point of using
+                lorem ipsum is that it has a more orless normal distribution of
+                letters as opposed to using content here making it look our firm
+                is a long established fact that a reader will be distracted by
+                the readable of a page when looking at its layout the point of
+                using lorem ipsum is that it has a more or less normal
+                distribution of letters as opposed to using content here making
+                it look the point of using lorem ipsum is that it has a more
+                orless normal distribution of letters as opposed to using
+                content here making it look our firm is a long lorem ipsum is
+                that it has a more or less normal distribution of letters as
+                opposed to using content here making it look our firm is a long
+                established fact that a reader will be distracted by the
+                readable of a page
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -628,11 +756,13 @@
     <script src="assets/js/main.js"></script>
 
     <script>
+      let ratingVal = null;
       $("input[type=radio][name=rating]").change(function () {
         let val = this.value;
         $(".input-rating .icon").removeClass("show");
         $(".star" + val + " .icon").addClass("show");
-        $("#rating").text(val + ".0");
+        ratingVal = val + ".0";
+        $("#rating").text(ratingVal);
       });
 
       $(".star1").mouseover(function () {
@@ -651,7 +781,11 @@
         $("#rating").text("5.0");
       });
       $(".star1, .star2, .star3, .star4, .star5").mouseleave(function () {
-        $("#rating").text("0.0");
+        if (ratingVal !== null) {
+          $("#rating").text(ratingVal);
+        } else {
+          $("#rating").text("0.0");
+        }
       });
     </script>
   </body>

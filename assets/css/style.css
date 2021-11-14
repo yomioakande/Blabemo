@@ -84,6 +84,7 @@ h6 {
   font-weight: 500;
   margin-bottom: 0.5rem;
   color: #303030;
+  overflow-wrap: break-word;
 }
 p {
   margin: 0;
@@ -445,6 +446,7 @@ img {
   color: #303030;
   font-size: 25px;
   font-family: "Montserrat-Bold";
+  overflow-wrap: break-word;
 }
 .header3 button {
   background-color: #1f2131;
@@ -560,6 +562,7 @@ img {
   .header2,
   .header3 {
     padding: 40px 15px;
+    display: block;
   }
   .breadcrumbs {
     padding: 15px;
@@ -574,6 +577,12 @@ img {
     flex-direction: column;
     height: auto;
     margin-bottom: 25px;
+  }
+  .result-info-header {
+    display: block;
+  }
+  .result-info-header button {
+    margin-top: 15px;
   }
   .result-info {
     width: 100%;
@@ -732,6 +741,23 @@ img {
 }
 .onboarding-tags {
   text-align: left;
+  position: relative;
+}
+.tag-info {
+  display: none;
+  position: absolute;
+  bottom: 103%;
+  font-size: 10px;
+  left: 0;
+  background-color: #ffffff;
+  padding: 7px;
+  border-radius: 5px;
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.onboarding-tags:hover .tag-info {
+  display: block;
 }
 @media screen and (max-width: 991px) {
   .signup-bg,
@@ -770,6 +796,9 @@ img {
 }
 .cookies-alert p {
   margin: 0;
+}
+.cookies-alert p a {
+  color: #ff6634;
 }
 .cookies-alert .col-lg-3 {
   display: flex;
@@ -841,6 +870,7 @@ img {
 }
 .about {
   padding: 60px 90px;
+  overflow: hidden;
 }
 .about h3,
 .terms h3,
@@ -919,7 +949,7 @@ img {
     width: 100%;
   }
   .about-tab {
-    padding: 0;
+    padding: 0 10px;
   }
   .about-tab li {
     display: inline-block;
@@ -1200,10 +1230,10 @@ img {
 /* ########## Business Details Screen End ########## */
 
 /* ########## Claim Business Modal ########## */
-#claimBusinessModal .modal-content {
-  padding: 60px 30px 30px;
+.modal-content {
+  padding: 60px 20px 30px;
 }
-#claimBusinessModal .btn-close {
+.modal-content .btn-close {
   background-color: #f4f4f4;
   color: #333333;
   border-radius: 50%;
@@ -1212,6 +1242,13 @@ img {
   position: absolute;
   right: 15px;
   top: 15px;
+}
+.modal-content .header {
+  font-family: "Montserrat-ExtraBold";
+  border-bottom: 1px solid #8d8d8d;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 .modal-form {
   margin-top: 25px;
@@ -1274,6 +1311,7 @@ img {
 }
 .timeline-left-sidebar {
   border: 1px solid #f4f4f4;
+  margin-bottom: 30px;
 }
 .timeline-profile {
   padding: 20px 15px 5px;
@@ -1718,7 +1756,7 @@ img {
 }
 @media screen and (max-width: 991px) {
   .page-content {
-    padding: 40px 15px;
+    padding: 15px;
   }
   .post-blab {
     padding: 15px;
@@ -1747,10 +1785,23 @@ img {
   .handle-details {
     padding-left: 10px;
   }
+  .modal-content {
+    padding: 60px 5px 20px;
+  }
 }
 @media screen and (max-width: 540px) {
   .handle-btns {
     width: 80px;
+  }
+  .business-info .claimed span {
+    display: none;
+  }
+  .business-info .location {
+    margin: 5px 0;
+    text-align: left;
+  }
+  .blab-message-footer button {
+    padding: 10px 15px;
   }
 }
 /* ########## Timeline Screen End ########## */
