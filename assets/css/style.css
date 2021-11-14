@@ -520,6 +520,7 @@ img {
   font-weight: 600;
 }
 .rating img {
+  display: inline-block;
   width: 20px;
   margin-right: 5px;
 }
@@ -1899,15 +1900,17 @@ img {
   width: 55%;
   color: #8d8d8d;
 }
-.quote i {
+.quote::before {
   position: absolute;
   top: -10px;
-  left: -30px;
-  font-size: 28px;
+  left: -40px;
+  content: url("../images/top-quote.svg");
 }
-.quote i:last-of-type {
-  top: 80%;
-  left: 95%;
+.quote::after {
+  position: absolute;
+  bottom: -10px;
+  right: -15px;
+  content: url("../images/bottom-quote.svg");
 }
 .hero-search {
   margin: 35px 0;
@@ -2048,6 +2051,7 @@ img {
   transform: rotate(320deg);
 }
 .hero-img .employee-reviews h5 {
+  font-family: "Montserrat-Black";
   font-weight: 900;
   font-size: calc(18px + (32 - 18) * ((100vw - 300px) / 1300));
   color: #ff6634;
@@ -2099,20 +2103,10 @@ img {
 .review-info {
   padding: 30px 30px 15px;
 }
-.review-info .rating i {
-  color: #ededed;
-  display: inline-block;
-}
-.review-info .rating i.active,
-.review-info .rating i.fa-star-half-alt {
-  color: #ff6634;
-}
-.review-info .rating p {
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: #000000;
-  display: inline-block;
-  margin-left: 5px;
+.review-info .rating {
+  text-align: right;
+  color: #555555;
+  font-family: "Montserrat-Bold";
 }
 .review-text {
   font-size: 12px;
@@ -2142,6 +2136,7 @@ img {
 .review-tags span {
   color: #000000;
   font-weight: 600;
+  font-size: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2166,12 +2161,12 @@ img {
 }
 .reviewer-info h5 {
   color: #6c6c6c;
-  font-size: 15px;
+  font-size: 14px;
   margin: 0;
 }
 .reviewer-info p {
   color: #bfbfbf;
-  font-size: 12px;
+  font-size: 11px;
 }
 .slick-dots li button {
   background: #ffffff;
