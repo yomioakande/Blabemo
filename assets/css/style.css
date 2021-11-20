@@ -41,6 +41,8 @@ body {
   font-size: 14px;
   font-weight: normal;
   line-height: 1.5;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 ul,
 li {
@@ -88,6 +90,19 @@ h6 {
 }
 p {
   margin: 0;
+}
+*:not(body) {
+  scrollbar-width: thin;
+  scrollbar-color: #f4f4f4;
+}
+*:not(body)::-webkit-scrollbar {
+  width: 6px;
+}
+*:not(body)::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+*:not(body)::-webkit-scrollbar-thumb {
+  background-color: #f4f4f4;
 }
 select {
   -webkit-appearance: none;
@@ -686,7 +701,8 @@ img {
 .review-login h6::after {
   left: 55%;
 }
-.signup-box a {
+.signup-box a,
+.review-login label a {
   color: #ff6634;
 }
 .signup-form input,
@@ -856,6 +872,8 @@ img {
 }
 .about-tab {
   padding: 0 90px;
+  overflow: auto;
+  white-space: nowrap;
 }
 .about-tab li {
   display: inline-block;
@@ -1106,6 +1124,7 @@ img {
 .review-tags-container {
   margin: 25px 0 45px;
   max-height: 250px;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 .review-tag {
@@ -1270,6 +1289,7 @@ img {
 
 /* ########## Timeline Screen ########## */
 .navbar-account {
+  float: right;
   display: flex;
   align-items: center;
   position: relative;
@@ -1281,12 +1301,15 @@ img {
   border-radius: 50%;
   margin-right: 5px;
 }
+.navbar-account i {
+  color: #8d8d8d;
+}
 .account-dropdown {
   display: none;
   position: absolute;
-  left: 50%;
+  background-color: #ffffff;
+  right: 0;
   top: 100%;
-  transform: translateX(-50%);
   margin-top: 10px;
   width: 180px;
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
@@ -1306,6 +1329,21 @@ img {
 .account-dropdown a li {
   padding: 10px;
   margin: 0;
+}
+.account-dropdown li {
+  color: #555555;
+  padding: 5px 10px;
+  margin: 0 10px;
+}
+.account-dropdown li:hover,
+.account-dropdown li.active {
+  color: #ff6634;
+}
+.lg-hidden {
+  display: none !important;
+}
+.sm-hidden {
+  display: block !important;
 }
 .page-content {
   padding: 60px 90px;
@@ -1522,6 +1560,7 @@ img {
   font-size: 13px;
 }
 .blab-icons {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1542,6 +1581,31 @@ img {
 .blab-icons ul li.active svg,
 .blab-icons ul li:hover svg {
   fill: #ff6634;
+}
+.share-options {
+  display: none;
+  position: absolute;
+  right: 20px;
+  bottom: -40px;
+  background-color: #ffffff;
+  padding: 5px 10px;
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.04);
+}
+.share-options i {
+  background-color: #ff6634;
+  color: #ffffff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  margin: 5px;
+}
+.share-options.show {
+  display: block;
 }
 .verified-badge {
   display: inline-block;
@@ -1836,7 +1900,8 @@ img {
   width: auto;
   height: 35px;
 }
-.navigation {
+.navigation,
+.navigation2 {
   float: right;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1845,14 +1910,17 @@ img {
   -ms-flex-align: center;
   align-items: center;
 }
-.navigation li {
+.navigation li,
+.navigation2 li {
   display: inline-block;
   color: #555555;
   padding: 5px 10px;
   margin: 0 10px;
 }
 .navigation li:hover,
-.navigation li.active {
+.navigation li.active,
+.navigation2 li:hover,
+.navigation2 li.active {
   color: #ff6634;
 }
 .signup {
@@ -2558,6 +2626,9 @@ footer p {
   .menu-icon {
     display: block;
   }
+  .navigation2 {
+    display: none;
+  }
   .navigation {
     display: block;
     position: fixed;
@@ -2594,6 +2665,12 @@ footer p {
     background-color: rgba(184, 221, 255, 0.25);
     color: #000;
     border: none;
+  }
+  .lg-hidden {
+    display: block !important;
+  }
+  .sm-hidden {
+    display: none !important;
   }
 }
 .animation-element {

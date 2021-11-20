@@ -37,6 +37,16 @@ $(".navbar-account").on("click", function () {
   $(".account-dropdown").toggleClass("show");
 });
 
+$(document).mouseup(function (e) {
+  var sopt = $(".share-options");
+  if (!sopt.is(e.target) && sopt.has(e.target).length === 0) {
+    sopt.removeClass("show");
+  }
+});
+$(".share-icon").click(function () {
+  $(this).siblings(".share-options").toggleClass("show");
+});
+
 // Cookies Alert Dialog
 setTimeout(function () {
   $(".cookies-alert").show();
