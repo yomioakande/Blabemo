@@ -12,6 +12,53 @@ $(function () {
   $(window).on("load", sticky());
 });
 
+$(function () {
+  function sticky2() {
+    if ($(window).innerWidth() > 991) {
+      let divHeight = $(".timeline-right-sidebar").height();
+      $(".middleDiv").height(divHeight + "px");
+
+      let height = $(".timeline-left-sidebar").height() / 2;
+      if ($(window).scrollTop() >= height) {
+        $(".timeline-left-sidebar").addClass("fixed");
+      } else if ($(window).scrollTop() < height) {
+        $(".timeline-left-sidebar").removeClass("fixed");
+      }
+    }
+  }
+  $(window).on("scroll", function () {
+    sticky2();
+  });
+  $(window).on("load", sticky2());
+  $(window).bind("resize", function () {
+    sticky2();
+  });
+
+  $("#showSideProfile").click(function () {
+    $(".timeline-left-sidebar").toggleClass("show");
+    $(".timeline-right-sidebar").removeClass("show");
+    const leftnav = $(".timeline-left-sidebar").hasClass("show");
+    const rightnav = $(".timeline-right-sidebar").hasClass("show");
+    if (leftnav == true || rightnav == true) {
+      $(".middleDiv").addClass("shadow");
+    } else {
+      $(".middleDiv").removeClass("shadow");
+    }
+  });
+
+  $("#showSidebarSearch").click(function () {
+    $(".timeline-right-sidebar").toggleClass("show");
+    $(".timeline-left-sidebar").removeClass("show");
+    const leftnav = $(".timeline-left-sidebar").hasClass("show");
+    const rightnav = $(".timeline-right-sidebar").hasClass("show");
+    if (leftnav == true || rightnav == true) {
+      $(".middleDiv").addClass("shadow");
+    } else {
+      $(".middleDiv").removeClass("shadow");
+    }
+  });
+});
+
 $(document).mouseup(function (e) {
   var fnav = $(".navigation");
   if (!fnav.is(e.target)) {
@@ -114,3 +161,60 @@ function check_if_in_view() {
 
 $window.on("scroll resize", check_if_in_view);
 $window.trigger("scroll");
+
+// See More Onclick loading icon
+$(".fa-spinner").hide();
+$(".more").click(function () {
+  // $(this).hide();
+  $(this).siblings(".fa-spinner").toggle();
+});
+
+var profile_img = $("#profile_img").croppie({
+  enableExif: true,
+  enableOrientation: true,
+  viewport: {
+    width: 240,
+    height: 240,
+    type: "square",
+  },
+  boundary: {
+    width: 250,
+    height: 250,
+  },
+});
+
+$("#image_upload").on("change", function () {
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    profile_img
+      .croppie("bind", {
+        url: e.target.result,
+      })
+      .then(function () {
+        console.log("jQuery bind complete");
+      });
+  };
+  reader.readAsDataURL(this.files[0]);
+});
+
+$("#crop").on("click", function (ev) {
+  profile_img
+    .croppie("result", {
+      type: "canvas",
+      // size: 'viewport'
+      size: { width: 320, height: 320 },
+    })
+    .then(function (response) {
+      $(".profile-img>img").attr("src", response);
+      $("#profileImgModal").modal("hide");
+    });
+});
+
+$("#rotateLeft").on("click", function () {
+  deg = +90;
+  profile_img.croppie("rotate", deg);
+});
+$("#rotateRight").on("click", function () {
+  deg = -90;
+  profile_img.croppie("rotate", deg);
+});
