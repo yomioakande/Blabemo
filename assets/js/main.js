@@ -12,6 +12,23 @@ $(function () {
   $(window).on("load", sticky());
 });
 
+// Back to Top Button
+$(".btt").hide();
+$(function () {
+  function sticky() {
+    let hgt = $(window).innerHeight();
+    if ($(window).scrollTop() >= hgt) {
+      $(".btt").show();
+    } else if ($(window).scrollTop() < hgt) {
+      $(".btt").hide();
+    }
+  }
+  $(window).on("scroll", function () {
+    sticky();
+  });
+  $(window).on("load", sticky());
+});
+
 $(function () {
   function sticky2() {
     if ($(window).innerWidth() > 991) {
@@ -36,26 +53,29 @@ $(function () {
 
   $("#showSideProfile").click(function () {
     $(".timeline-left-sidebar").toggleClass("show");
-    $(".timeline-right-sidebar").removeClass("show");
-    const leftnav = $(".timeline-left-sidebar").hasClass("show");
-    const rightnav = $(".timeline-right-sidebar").hasClass("show");
-    if (leftnav == true || rightnav == true) {
-      $(".middleDiv").addClass("shadow");
-    } else {
-      $(".middleDiv").removeClass("shadow");
-    }
+    $(".middleDiv").toggleClass("shadow");
   });
-
+  $(".timeline-left-sidebar .close").click(function () {
+    $(".timeline-left-sidebar").toggleClass("show");
+    $(".middleDiv").toggleClass("shadow");
+  });
   $("#showSidebarSearch").click(function () {
     $(".timeline-right-sidebar").toggleClass("show");
-    $(".timeline-left-sidebar").removeClass("show");
-    const leftnav = $(".timeline-left-sidebar").hasClass("show");
-    const rightnav = $(".timeline-right-sidebar").hasClass("show");
-    if (leftnav == true || rightnav == true) {
-      $(".middleDiv").addClass("shadow");
-    } else {
-      $(".middleDiv").removeClass("shadow");
-    }
+    $(".middleDiv").toggleClass("shadow");
+  });
+  $(".timeline-right-sidebar .close").click(function () {
+    $(".timeline-right-sidebar").toggleClass("show");
+    $(".middleDiv").toggleClass("shadow");
+  });
+
+  $("#showReviewSearch").click(function () {
+    $(".peer-review-left-sidebar").toggleClass("show");
+    $("#peerReview").toggleClass("shadow");
+  });
+
+  $(".peer-review-search .close").click(function () {
+    $(".peer-review-left-sidebar").toggleClass("show");
+    $("#peerReview").toggleClass("shadow");
   });
 });
 
@@ -132,6 +152,54 @@ $("#blabCommentTab").click(function () {
   $("#blabPostTab").removeClass("active");
   $(".blabPostTab").hide();
   $(".blabCommentTab").show();
+});
+
+// PROFILE TAB
+$(".editProfileTab").hide();
+$(".changePasswordTab").hide();
+$(".blabVerificationTab").hide();
+$("#profileTab").click(function () {
+  $(this).addClass("active");
+  $("#editProfileTab").removeClass("active");
+  $("#changePasswordTab").removeClass("active");
+  $("#blabVerificationTab").removeClass("active");
+  $(".editProfileTab").hide();
+  $(".changePasswordTab").hide();
+  $(".blabVerificationTab").hide();
+  $(".profileTab").show();
+});
+
+$("#editProfileTab").click(function () {
+  $(this).addClass("active");
+  $("#profileTab").removeClass("active");
+  $("#changePasswordTab").removeClass("active");
+  $("#blabVerificationTab").removeClass("active");
+  $(".profileTab").hide();
+  $(".changePasswordTab").hide();
+  $(".blabVerificationTab").hide();
+  $(".editProfileTab").show();
+});
+
+$("#changePasswordTab").click(function () {
+  $(this).addClass("active");
+  $("#profileTab").removeClass("active");
+  $("#editProfileTab").removeClass("active");
+  $("#blabVerificationTab").removeClass("active");
+  $(".profileTab").hide();
+  $(".editProfileTab").hide();
+  $(".blabVerificationTab").hide();
+  $(".changePasswordTab").show();
+});
+
+$("#blabVerificationTab").click(function () {
+  $(this).addClass("active");
+  $("#profileTab").removeClass("active");
+  $("#editProfileTab").removeClass("active");
+  $("#changePasswordTab").removeClass("active");
+  $(".profileTab").hide();
+  $(".editProfileTab").hide();
+  $(".changePasswordTab").hide();
+  $(".blabVerificationTab").show();
 });
 
 var $animation_elements = $(".animation-element");
@@ -217,4 +285,15 @@ $("#rotateLeft").on("click", function () {
 $("#rotateRight").on("click", function () {
   deg = -90;
   profile_img.croppie("rotate", deg);
+});
+
+// Close blab-alert
+$(".blab-alert button").click(function () {
+  $(".blab-alert").slideUp();
+});
+
+// Filter toggle
+$(".filters-btn").click(function () {
+  $(".filter-search").toggle();
+  $(".applied-filters").toggle();
 });

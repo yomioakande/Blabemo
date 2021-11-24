@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="author" content="Yomi Akande" />
+    <meta
+      name="description"
+      content="Grow your business with real-time reviews"
+    />
+    <meta name="keywords" content="" />
+
+    <!--  Essential META Tags -->
+    <meta property="og:title" content="Blabemo" />
+    <meta
+      property="og:description"
+      content="Grow your business with real-time reviews"
+    />
+    <meta property="og:image" content="assets/images/favicon.ico" />
+    <meta property="og:url" content="" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:site_name" content="Blabemo" />
+    <meta name="twitter:image:alt" content="Blabemo logo" />
+
+    <!--  Non-Essential, But Required for Analytics -->
+    <meta property="fb:app_id" content="your_app_id" />
+    <meta name="twitter:site" content="@website-username" />
+
+    <title>Blabemo - Grow your business with real-time reviews</title>
+
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+
+    <!-- ########## CSS LINKS ########## -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Header begin -->
+    <header class="home-header" id="home">
+      <div class="nav-header">
+        <a href="">
+          <img
+            class="logo"
+            src="assets/images/blabemo.png"
+            height="35px"
+            alt="Blabemo Logo"
+          />
+        </a>
+
+        <div class="navbar-account">
+          <img src="assets/images/Ellipse 3.png" alt="" />
+          <i class="fa fa-caret-down"></i>
+          <ul class="account-dropdown">
+            <a href="#" class="lg-hidden"><li>Timeline</li></a>
+            <a href="#" class="lg-hidden"><li>Peer Review</li></a>
+            <a href=""><li>Profile</li></a>
+            <a href=""><li>Logout</li></a>
+          </ul>
+        </div>
+        <ul class="navigation2">
+          <a href="#"><li>Timeline</li></a>
+          <a href="#"><li class="active">Peer Review</li></a>
+          <li>Hi, Johnson</li>
+        </ul>
+      </div>
+    </header>
+    <!-- Header end -->
+
+    <div class="blab-alert">
+      Hi, Johnson welcome back, please click here to complete your onboarding
+      registration.
+      <button type="button">&times;</button>
+    </div>
+
+    <div class="page-content">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="peer-review-left-sidebar">
+            <div class="peer-review-search">
+              <div class="lg-hidden">
+                <span class="close">&times;</span>
+              </div>
+              <input
+                class="sidebar-search"
+                type="text"
+                name=""
+                id=""
+                placeholder="Search"
+              />
+
+              <ul class="review-lists">
+                <li>Customer Care <span>Review: 30</span></li>
+                <li>Product Designer <span>Review: 120</span></li>
+                <li>Office Attendant <span>Review: 55</span></li>
+                <li>Writer <span>Review: 80</span></li>
+                <li>Data Analysis <span>Review: 78</span></li>
+                <li>Customer Care <span>Review: 35</span></li>
+                <li>Animator <span>Review: 65</span></li>
+                <li>Engineer <span>Review: 85</span></li>
+                <li>Video Auditor <span>Review: 89</span></li>
+              </ul>
+            </div>
+
+            <div class="advert mt-5">ADVERTISEMENT</div>
+          </div>
+        </div>
+        <div class="col-lg-9" id="peerReview">
+          <div class="review-header">
+            <h5>Peer Review</h5>
+            <div class="pull-right">
+              <i id="showReviewSearch" class="fa fa-search lg-hidden"></i>
+            </div>
+          </div>
+
+          <div class="upload-cv-container">
+            <div class="upload-status">
+              <img src="assets/images/file-icon.svg" alt="" />
+              <div class="upload-process">
+                <div class="upload-name">
+                  <p>Resume.pdf</p>
+                  <span>230 KB</span>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width: 45%"
+                    aria-valuenow="45"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <p>45% done</p>
+              </div>
+            </div>
+            <div class="upload-cv">
+              <label for="cv_upload">
+                <h6>Choose</h6>
+                <p id="fileName">No file Selected</p>
+                <input id="cv_upload" type="file" accept=".pdf, .doc, .docx" />
+              </label>
+              <button type="button">Upload</button>
+            </div>
+          </div>
+
+          <form class="cv-upload-form" action="" method="post">
+            <div class="row">
+              <div class="col-lg-8 offset-lg-2">
+                <input type="text" placeholder="Job title" />
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="7"
+                  placeholder="Detailed job description"
+                ></textarea>
+                <input
+                  type="text"
+                  placeholder="Years of professional expertise"
+                />
+                <div class="row">
+                  <div class="col-md-6">
+                    <input type="text" placeholder="Annual Income" />
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" placeholder="Currency " />
+                  </div>
+                </div>
+
+                <select name="" id="">
+                  <option value="" selected disabled>
+                    Satisfaction level with current earning
+                  </option>
+                </select>
+                <input type="text" placeholder="Current Employer " />
+
+                <button type="button" class="submit-btn">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"
+      integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="assets/js/croppie.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
