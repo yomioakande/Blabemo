@@ -133,15 +133,15 @@
               <div class="timeline-stats">
                 <div class="stat">
                   <h3>25M</h3>
-                  <p>No of reviews</p>
+                  <p>Reviews</p>
                 </div>
                 <div class="stat">
                   <h3>45</h3>
-                  <p>No of blabs</p>
+                  <p>Blabs</p>
                 </div>
                 <div class="stat">
                   <h3>15K</h3>
-                  <p>No of re-blabs</p>
+                  <p>Re-blabs</p>
                 </div>
               </div>
             </div>
@@ -311,15 +311,15 @@
                         <tbody>
                           <tr>
                             <td>Google Inc</td>
-                            <td>Delete</td>
+                            <td class="delete">Delete</td>
                           </tr>
                           <tr>
                             <td>Starbucks</td>
-                            <td>Delete</td>
+                            <td class="delete">Delete</td>
                           </tr>
                           <tr>
                             <td>Amazon</td>
-                            <td>Delete</td>
+                            <td class="delete">Delete</td>
                           </tr>
                         </tbody>
                       </table>
@@ -442,39 +442,47 @@
                 is simply dummy text
               </p>
 
+              <div class="select-all">
+                <label class="checkbox"
+                  >Select All
+                  <input name="" type="checkbox" value="" />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
               <ul>
                 <li>
                   <label class="checkbox"
                     >Amazon
-                    <input name="paymentOption" type="radio" value="" />
+                    <input name="paymentOption" type="checkbox" value="" />
                     <span class="checkmark"></span>
                   </label>
                 </li>
                 <li>
                   <label class="checkbox"
                     >Airbnb
-                    <input name="paymentOption" type="radio" value="" />
+                    <input name="paymentOption" type="checkbox" value="" />
                     <span class="checkmark"></span>
                   </label>
                 </li>
                 <li>
                   <label class="checkbox"
                     >Google Inc
-                    <input name="paymentOption" type="radio" value="" />
+                    <input name="paymentOption" type="checkbox" value="" />
                     <span class="checkmark"></span>
                   </label>
                 </li>
                 <li>
                   <label class="checkbox"
                     >LinkedIn
-                    <input name="paymentOption" type="radio" value="" />
+                    <input name="paymentOption" type="checkbox" value="" />
                     <span class="checkmark"></span>
                   </label>
                 </li>
                 <li>
                   <label class="checkbox"
                     >Starbucks
-                    <input name="paymentOption" type="radio" value="" />
+                    <input name="paymentOption" type="checkbox" value="" />
                     <span class="checkmark"></span>
                   </label>
                 </li>
@@ -495,7 +503,17 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="assets/js/croppie.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+      $(".delete").click(function () {
+        swal("Are you sure you want to delete this company?", {
+          dangerMode: true,
+          buttons: ["No", "Sure"],
+        });
+      });
+    </script>
   </body>
 </html>
