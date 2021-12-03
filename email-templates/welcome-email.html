@@ -4,9 +4,6 @@
 <head>
     <title></title>
     <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             -ms-text-size-adjust: 100%;
@@ -102,6 +99,21 @@
             text-align: center;
             font-size: 13px;
         }
+        .header-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-text {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 28px;
+            color: #303030;
+            font-family: 'Montserrat-SemiBold';
+        }
     </style>
 </head>
 
@@ -121,16 +133,9 @@
         <div style="padding: 50px 0; text-align: center">
             <img src="../assets/images/blabemo.png" alt="BlabEmo Logo" height="45px" />
         </div>
-        <div style="
-          background: url('../assets/images/mail-header.svg') no-repeat center;
-          background-size: cover;
-          padding: 40px 0;
-          text-align: center;
-          font-size: 28px;
-          color: #303030;
-          font-family: 'Montserrat-SemiBold';
-        ">
-            Welcome to BlabEmo
+        <div style="position: relative;">
+            <img class="header-img" src="../assets/images/mail-header.svg" alt="">
+            <h3 class="header-text">Welcome to BlabEmo</h3>
         </div>
         <div style="width: 80%;margin:0 auto;">
             <div style="padding: 50px 0;border-bottom: 1px solid #ececec;">
@@ -153,9 +158,27 @@
             </div>
             <div style="border-bottom: 1px solid #ececec;padding: 30px 0 50px;text-align: center;">
                 <p style="color: #303030;font-family: 'Montserrat-SemiBold';font-size: 18px;">Stay in touch</p>
-                <i class="fab fa-facebook-f social-icon"></i>
-                <i class="fab fa-twitter social-icon"></i>
-                <i class="fab fa-linkedin-in social-icon"></i>
+                <div class="social-icon"><svg width="8" height="15" viewBox="0 0 8 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.39048 5V3.5C5.39048 2.85 5.54282 2.5 6.6092 2.5H7.92948V0H5.89828C3.35929 0 2.34369 1.65 2.34369 3.5V5H0.3125V7.5H2.34369V15H5.39048V7.5H7.6248L7.92948 5H5.39048Z"
+                            fill="#FF6634" />
+                    </svg>
+                </div>
+                <div class="social-icon">
+                    <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M14.2125 1.81448C13.6991 2.03826 13.1545 2.18483 12.5969 2.2493C13.184 1.90318 13.6233 1.35885 13.8332 0.717609C13.2811 1.03977 12.6774 1.26726 12.048 1.39036C11.6623 0.984432 11.1616 0.702138 10.6108 0.580185C10.0601 0.458231 9.48481 0.50226 8.95981 0.706546C8.43482 0.910832 7.98439 1.26592 7.6671 1.72565C7.34981 2.18537 7.18033 2.72846 7.18071 3.2843C7.18071 3.50198 7.20527 3.71292 7.25497 3.91486C6.13614 3.86064 5.04147 3.57489 4.0423 3.07624C3.04312 2.57759 2.16187 1.87723 1.45598 1.0208C1.20518 1.44352 1.07363 1.92454 1.07494 2.41411C1.07494 3.3743 1.57023 4.22255 2.3266 4.71923C1.87984 4.70528 1.44299 4.58607 1.05266 4.37161V4.40705C1.05227 5.04671 1.27684 5.66676 1.68821 6.16184C2.09957 6.65692 2.67235 6.99648 3.30919 7.1228C2.89505 7.23463 2.46035 7.25118 2.03868 7.17117C2.21829 7.72147 2.56798 8.20278 3.03891 8.54788C3.50984 8.89298 4.07847 9.08462 4.66539 9.09605C4.08192 9.54699 3.41385 9.8802 2.69944 10.0766C1.98502 10.273 1.23828 10.3288 0.501953 10.2407C1.78762 11.0554 3.28448 11.488 4.81335 11.4867C9.98794 11.4867 12.818 7.26567 12.818 3.60492C12.818 3.4868 12.8135 3.3653 12.8089 3.24661C13.3588 2.85458 13.8339 2.36994 14.2125 1.81505V1.81448Z"
+                            fill="#FF6634" />
+                    </svg>
+                </div>
+                <div class="social-icon">
+                    <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.51554 1.75002C3.51534 2.14784 3.35464 2.52929 3.06881 2.81046C2.78297 3.09162 2.39541 3.24947 1.99138 3.24927C1.58735 3.24907 1.19995 3.09084 0.914404 2.8094C0.628854 2.52795 0.468548 2.14634 0.46875 1.74852C0.468952 1.35069 0.629646 0.969241 0.915481 0.688077C1.20132 0.406913 1.58888 0.249069 1.99291 0.249268C2.39694 0.249467 2.78434 0.407693 3.06989 0.689138C3.35544 0.970583 3.51574 1.35219 3.51554 1.75002ZM3.56124 4.36002H0.514452V13.75H3.56124V4.36002ZM8.37517 4.36002H5.34362V13.75H8.3447V8.82252C8.3447 6.07752 11.978 5.82252 11.978 8.82252V13.75H14.9867V7.80252C14.9867 3.17502 9.60912 3.34752 8.3447 5.62002L8.37517 4.36002Z"
+                            fill="#FF6634" />
+                    </svg>
+                </div>
             </div>
             <p class="copyright">© Copyright 2021 BlabEmo.</p>
         </div>

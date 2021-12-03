@@ -45,6 +45,7 @@
 
     <!-- ########## CSS LINKS ########## -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/croppie.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
@@ -415,7 +416,7 @@
       </div>
     </footer>
 
-    <!-- Profile Img modal -->
+    <!-- Verification modal -->
     <div
       class="modal fade"
       id="blabModal"
@@ -489,6 +490,46 @@
               </ul>
               <button type="button" class="submit-btn">Submit</button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Img modal -->
+    <div
+      class="modal fade"
+      id="profileImgModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body">
+            <h5 class="header">Profile Image</h5>
+            <div id="profile_img"></div>
+            <ul class="toolbox">
+              <li id="rotateLeft"><i class="fa fa-undo"></i></li>
+              <li id="rotateRight"><i class="fa fa-redo"></i></li>
+              <li id="crop"><i class="fa fa-cloud-upload-alt"></i></li>
+              <li>
+                <label for="image_upload">
+                  Browse
+                  <input
+                    id="image_upload"
+                    type="file"
+                    accept=".jpg, .png, .jpeg"
+                  />
+                </label>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
