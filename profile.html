@@ -53,6 +53,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="assets/css/jquery-multi-select.css" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -236,23 +237,22 @@
                       />
                       <div class="row">
                         <div class="col-md-6">
-                          <select name="" id="">
-                            <option value="" selected disabled>
-                              Minority Group
-                            </option>
-                          </select>
+                          <div class="onboarding-tags" id="tags">
+                            <div class="tag-info">
+                              Our firm is a long established fact that a reader
+                              will be distracted by the readable of a page when
+                              looking at its layout the point of using lorem
+                              ipsum is that it has a more
+                            </div>
+                          </div>
                         </div>
                         <div class="col-md-6">
                           <select name="" id="">
                             <option value="" selected disabled>Gender</option>
                           </select>
-                        </div>
-                        <div class="col-md-6">
                           <select name="" id="">
                             <option value="" selected disabled>Age Rage</option>
                           </select>
-                        </div>
-                        <div class="col-md-6">
                           <select name="" id="">
                             <option value="" selected disabled>
                               Ethnic Group
@@ -312,15 +312,15 @@
                         <tbody>
                           <tr>
                             <td>Google Inc</td>
-                            <td class="delete">Delete</td>
+                            <td class="delete" company="Google Inc">Delete</td>
                           </tr>
                           <tr>
                             <td>Starbucks</td>
-                            <td class="delete">Delete</td>
+                            <td class="delete" company="Starbucks">Delete</td>
                           </tr>
                           <tr>
                             <td>Amazon</td>
-                            <td class="delete">Delete</td>
+                            <td class="delete" company="Amazon">Delete</td>
                           </tr>
                         </tbody>
                       </table>
@@ -446,7 +446,15 @@
               <div class="select-all">
                 <label class="checkbox"
                   >Select All
-                  <input name="" type="checkbox" value="" />
+                  <input id="selectAll" name="" type="checkbox" value="" />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
+              <div class="deselect-all">
+                <label class="checkbox"
+                  >Deselect All
+                  <input id="deselectAll" name="" type="checkbox" value="" />
                   <span class="checkmark"></span>
                 </label>
               </div>
@@ -455,35 +463,35 @@
                 <li>
                   <label class="checkbox"
                     >Amazon
-                    <input name="paymentOption" type="checkbox" value="" />
+                    <input name="blabOption" type="checkbox" value="" />
                     <span class="checkmark"></span>
                   </label>
                 </li>
                 <li>
                   <label class="checkbox"
                     >Airbnb
-                    <input name="paymentOption" type="checkbox" value="" />
+                    <input name="blabOption" type="checkbox" value="" />
                     <span class="checkmark"></span>
                   </label>
                 </li>
                 <li>
                   <label class="checkbox"
                     >Google Inc
-                    <input name="paymentOption" type="checkbox" value="" />
+                    <input name="blabOption" type="checkbox" value="" />
                     <span class="checkmark"></span>
                   </label>
                 </li>
                 <li>
                   <label class="checkbox"
                     >LinkedIn
-                    <input name="paymentOption" type="checkbox" value="" />
+                    <input name="blabOption" type="checkbox" value="" />
                     <span class="checkmark"></span>
                   </label>
                 </li>
                 <li>
                   <label class="checkbox"
                     >Starbucks
-                    <input name="paymentOption" type="checkbox" value="" />
+                    <input name="blabOption" type="checkbox" value="" />
                     <span class="checkmark"></span>
                   </label>
                 </li>
@@ -545,15 +553,66 @@
     ></script>
     <script src="assets/js/croppie.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="assets/js/jquery-multi-select.js"></script>
 
     <script src="assets/js/main.js"></script>
 
     <script>
-      $(".delete").click(function () {
-        swal("Are you sure you want to delete this company?", {
-          dangerMode: true,
-          buttons: ["No", "Sure"],
+      // Select All
+      $("#selectAll").change(function () {
+        if (this.checked) {
+          $('input[name="blabOption"]').each(function () {
+            this.checked = true;
+          });
+        }
+        $(".select-all").hide();
+        $(".deselect-all").show();
+      });
+
+      // Deselect
+      $("#deselectAll").click(function () {
+        $('input[name="blabOption"]').each(function () {
+          this.checked = false;
         });
+        $(".deselect-all").hide();
+        $("#selectAll").prop("checked", false);
+        $(".select-all").show();
+      });
+
+      $(".delete").click(function () {
+        var company = $(this).attr("company");
+        swal({
+          title: "Are you sure you want to delete this company?",
+          text: "Once deleted, you won't be able to have access to the company again!",
+          icon: "warning",
+          buttons: ["Oh no!", "Very Sure!"],
+          dangerMode: true,
+        }).then((willDelete) => {
+          if (willDelete) {
+            swal(
+              "Company name: " +
+                company +
+                ". Function to delete member goes here"
+            );
+          }
+        });
+      });
+
+      const myData = [
+        { text: "Body Enhancement", value: 1 },
+        { text: "Age", value: 2 },
+        { text: "Religous", value: 3 },
+        { text: "Gender", value: 4 },
+        { text: "Race", value: 5 },
+        { text: "Skin color", value: 6 },
+        { text: "Institution", value: 7 },
+      ];
+
+      $("#tags").multiSelect({
+        data: myData,
+        listen(tags, item, operate) {
+          console.log(tags, item, operate);
+        },
       });
     </script>
   </body>

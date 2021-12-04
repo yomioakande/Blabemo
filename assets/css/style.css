@@ -2106,7 +2106,7 @@ input[type="file"] {
 .filter-search p {
   font-family: "Montserrat-Medium";
   color: #000000;
-  vertical-align: baseline;
+  margin-bottom: 10px;
 }
 .filter-search input {
   width: 100%;
@@ -2115,6 +2115,18 @@ input[type="file"] {
   border-radius: 5px;
   color: #aaaaaa;
   background: url("../images/search-icon.svg") no-repeat 7px center;
+}
+.filter-search button {
+  background-color: #ff6634;
+  border: 1px solid #ff6634;
+  width: 100%;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+.filter-search button:hover {
+  color: #ff6634;
+  background-color: #ffffff;
 }
 .peer-reviews {
   margin: 30px 0 50px;
@@ -2456,6 +2468,12 @@ input[type="file"] {
 .profile-form .delete {
   cursor: pointer;
 }
+.profile-form .m--s-ipt {
+  height: 199px;
+}
+.profile-form .m--s-list {
+  max-height: 155px;
+}
 .table-striped > tbody > tr:nth-of-type(odd) {
   --bs-table-accent-bg: #fbfbfb !important;
 }
@@ -2472,11 +2490,42 @@ input[type="file"] {
   border-top: 1px solid #ebebeb;
   padding: 10px;
 }
-.select-all {
+.select-all,
+.deselect-all {
   padding: 30px 10px 10px;
   color: #000000;
 }
+.deselect-all {
+  display: none;
+}
 /* ########## Profile Screen End ########## */
+
+/* ########## Error Page ########## */
+.error-page {
+  padding: 30px 15px;
+  text-align: center;
+}
+.error-text {
+  font-family: "Montserrat-ExtraBold";
+  font-size: calc(108px + (250 - 108) * ((100vw - 300px) / 1300));
+  color: #ff6634;
+}
+.error-page p {
+  font-size: 24px;
+}
+.error-page button {
+  background-color: #ff6634;
+  border: 1px solid #ff6634;
+  color: #ffffff;
+  padding: 15px 25px;
+  border-radius: 5px;
+  margin: 25px 0;
+}
+.error-page button:hover {
+  background-color: #ffffff;
+  color: #ff6634;
+}
+/* ########## Error Page End ########## */
 
 .home-header {
   top: 0;
@@ -3367,7 +3416,8 @@ footer p {
   padding-left: 50px;
   font-family: "Montserrat-SemiBold";
 }
-.blab-verification .select-all.checkbox {
+.blab-verification .select-all.checkbox,
+.blab-verification .deselect-all.checkbox {
   padding-left: 20px;
 }
 .review-tag .checkbox,
