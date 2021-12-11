@@ -51,6 +51,11 @@ $(function () {
     sticky2();
   });
 
+  // Dashboard Alert Close
+  $(".alert-close").click(function () {
+    $(".dashboard-alert").slideUp();
+  });
+
   $("#showSideProfile").click(function () {
     $(".timeline-left-sidebar").toggleClass("show");
     $(".middleDiv").toggleClass("shadow");
@@ -290,6 +295,10 @@ $("#rotateRight").on("click", function () {
 // Close blab-alert
 $(".blab-alert button").click(function () {
   $(".blab-alert").slideUp();
+});
+
+$(".dash-blab-alert button").click(function () {
+  $(".dash-blab-alert").slideUp();
 });
 
 // Filter toggle

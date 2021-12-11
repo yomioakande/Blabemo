@@ -136,8 +136,8 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="hero-img animation-element slide-right">
+        <div class="col-lg-6 hero-right">
+          <div class="hero-img">
             <img id="heroImg" src="assets/images/hero.png" alt="" />
             <div class="review">
               <div class="review-info">
@@ -165,9 +165,10 @@
               <p>Employee Reveiws</p>
             </div>
             <div class="hero-chart">
-              <div class="progress-circle">
-                <span>25%</span>
+              <div class="progress-circle over50 p75">
+                <span>75%</span>
                 <div class="left-half-clipper">
+                  <div class="first50-bar"></div>
                   <div class="value-bar"></div>
                 </div>
               </div>
@@ -460,6 +461,9 @@
     <footer>
       <div class="row">
         <div class="col-lg-4">
+          <div class="footer-logo">
+            <img src="assets/images/footer-logo.png" alt="" />
+          </div>
           <p>
             This platform for minority groups to express their opinions on
             employment, workplace experiences and rate employers.
@@ -685,39 +689,6 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-      var quoteIndex = 0;
-      var imgIndex = 0;
-      changeQuotes();
-      changeImages();
-
-      function changeQuotes() {
-        const quotes = [
-          "A life spent making mistakes is not only more honorable, but more useful than a life spent doing nothing.",
-          "You do not write your life with words... You write it with actions. What you think is not important. It is only important what you do",
-          "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.",
-          "When life is too easy for us, we must beware or we may not be ready to meet the blows which sooner or later come to everyone, rich or poor.",
-          "The simple things are also the most extraordinary things, and only the wise can see them.",
-        ];
-        const imgs = ["assets/images/hero.png", "assets/images/hero2.png"];
-        $("#quote").html(quotes[quoteIndex]);
-        $("#heroImg").attr("src", imgs[imgIndex]);
-        quoteIndex++;
-        if (quoteIndex > quotes.length) {
-          quoteIndex = 0;
-        }
-        setTimeout(changeQuotes, 3000);
-      }
-
-      // function changeImages() {
-      //   const imgs = ["assets/images/hero.png", "assets/images/hero2.png"];
-      //   $("#heroImg").attr("src", imgs[imgIndex]);
-      //   imgIndex++;
-      //   if (imgIndex > imgs.length) {
-      //     imgIndex = 0;
-      //   }
-      //   setTimeout(changeImages, 3000);
-      // }
-
       $("#clients").slick({
         slidesToShow: 5,
         slidesToScroll: 5,
