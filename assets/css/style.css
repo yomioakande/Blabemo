@@ -4559,3 +4559,31 @@ footer p {
     margin: 0 0 10px;
   }
 }
+.refresh-prompt {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff6634;
+  padding: 10px 15px;
+  border-radius: 45px;
+  align-items: center;
+  color: #ffffff;
+}
+.refresh-prompt.show {
+  display: flex;
+}
+.refresh-prompt ul {
+  display: flex;
+  padding: 0 5px 0 15px;
+}
+.refresh-prompt ul li img {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+.refresh-prompt ul li {
+  margin-left: -10px;
+}

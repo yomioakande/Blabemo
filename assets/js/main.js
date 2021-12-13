@@ -12,6 +12,21 @@ $(function () {
   $(window).on("load", sticky());
 });
 
+// Refresh Prompt
+$(function () {
+  function sticky() {
+    if ($(window).scrollTop() >= 450) {
+      $(".refresh-prompt").addClass("show");
+    } else if ($(window).scrollTop() < 450) {
+      $(".refresh-prompt").removeClass("show");
+    }
+  }
+  $(window).on("scroll", function () {
+    sticky();
+  });
+  $(window).on("load", sticky());
+});
+
 // Back to Top Button
 $(".btt").hide();
 $(function () {
