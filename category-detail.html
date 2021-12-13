@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="author" content="Yomi Akande" />
+    <meta
+      name="description"
+      content="Grow your business with real-time reviews"
+    />
+    <meta name="keywords" content="" />
+
+    <!--  Essential META Tags -->
+    <meta property="og:title" content="Blabemo" />
+    <meta
+      property="og:description"
+      content="Grow your business with real-time reviews"
+    />
+    <meta property="og:image" content="assets/images/favicon.ico" />
+    <meta property="og:url" content="" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:site_name" content="Blabemo" />
+    <meta name="twitter:image:alt" content="Blabemo logo" />
+
+    <!--  Non-Essential, But Required for Analytics -->
+    <meta property="fb:app_id" content="your_app_id" />
+    <meta name="twitter:site" content="@website-username" />
+
+    <title>Blabemo - Grow your business with real-time reviews</title>
+
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+
+    <!-- ########## CSS LINKS ########## -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/croppie.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/tagsinput.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header begin -->
+    <header class="home-header" id="home">
+      <div class="nav-header">
+        <a href="">
+          <img
+            class="logo"
+            src="assets/images/blabemo.png"
+            height="35px"
+            alt="Blabemo Logo"
+          />
+        </a>
+
+        <div class="dash-menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <!-- Header end -->
+
+    <section class="dashboard-content">
+      <div class="dashboard-sidebar">
+        <div class="brand-logo">
+          <img src="assets/images/airbnb.png" alt="" />
+          <h3>Airbnb</h3>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="heading">Main Menu</li>
+          <a href="">
+            <li class="active">Overview</li>
+          </a>
+          <a href="">
+            <li>Reviews</li>
+          </a>
+          <a href="">
+            <li>Subscription</li>
+          </a>
+          <a href="">
+            <li>Profile</li>
+          </a>
+        </ul>
+      </div>
+      <div class="dashboard-main">
+        <h3>Category</h3>
+        <h5>Reviews</h5>
+
+        <div class="row row-flex">
+          <div class="col-lg-6">
+            <div class="compare-result h100">
+              <h5>Total no of reviews per category</h5>
+              <div class="result-body">
+                <div id="reviewsByCat"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="compare-result h100">
+              <h5>Average reactions per category</h5>
+              <div class="result-body">
+                <ul class="average-reactions">
+                  <li>
+                    <img src="assets/images/angry.png" alt="" />
+                    <div class="reaction">
+                      <p><span>Body Enhancement</span>398K</p>
+                      <h3>3.0</h3>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="assets/images/dissatisfied.png" alt="" />
+                    <div class="reaction">
+                      <p><span>Age</span>198K</p>
+                      <h3>4.0</h3>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="assets/images/indifferent.png" alt="" />
+                    <div class="reaction">
+                      <p><span>Regilous</span>598K</p>
+                      <h3>5.0</h3>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <h5 class="mt-5">Interactions</h5>
+
+        <div class="row row-flex">
+          <div class="col-lg-6">
+            <div class="compare-result h100">
+              <h5>Total number of interactions per category</h5>
+              <div class="result-body">
+                <ul class="interactions">
+                  <li>
+                    <p>Blabs</p>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 70%"
+                        aria-valuenow="70"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                    <span>193k</span>
+                  </li>
+                  <li>
+                    <p>Re-blabs</p>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 80%"
+                        aria-valuenow="80"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                    <span>293k</span>
+                  </li>
+                  <li>
+                    <p>likes</p>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 90%"
+                        aria-valuenow="90"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                    <span>593k</span>
+                  </li>
+                  <li>
+                    <p>Comments</p>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 60%"
+                        aria-valuenow="60"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                    <span>293k</span>
+                  </li>
+                  <li>
+                    <p>Dislikes</p>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 40%"
+                        aria-valuenow="40"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                    <span>193k</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="compare-result h100">
+              <h5>Highlight reviews with the most interactions</h5>
+              <div class="result-body">
+                <div id="reviewsIteractions"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"
+      integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="assets/js/croppie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Bar Chart
+      var options = {
+        series: [
+          {
+            name: "",
+            data: [44, 55, 41, 37, 22, 43, 21],
+          },
+          {
+            name: "",
+            data: [53, 32, 33, 52, 13, 43, 32],
+          },
+        ],
+        colors: ["#ff9573", "#ffe5dd"],
+        chart: {
+          type: "bar",
+          height: 200,
+          stacked: true,
+          toolbar: {
+            show: false,
+          },
+        },
+        xaxis: {
+          show: false,
+          categories: [],
+        },
+        yaxis: {
+          show: false,
+        },
+        fill: {
+          opacity: 1,
+        },
+        legend: {
+          show: false,
+        },
+      };
+
+      var chart = new ApexCharts(
+        document.querySelector("#reviewsByCat"),
+        options
+      );
+      chart.render();
+
+      // reviewsIteractions
+      var options = {
+        series: [
+          {
+            name: "",
+            data: [44, 55],
+          },
+        ],
+        colors: ["#ba4a25", "#ffe5dd"],
+        chart: {
+          type: "bar",
+          height: 200,
+          stacked: false,
+          toolbar: {
+            show: false,
+          },
+        },
+        xaxis: {
+          show: false,
+          categories: ["Reviews", "Blabs"],
+        },
+        yaxis: {
+          show: true,
+        },
+        fill: {
+          opacity: 1,
+        },
+        legend: {
+          show: false,
+        },
+      };
+
+      var chart = new ApexCharts(
+        document.querySelector("#reviewsIteractions"),
+        options
+      );
+      chart.render();
+    </script>
+  </body>
+</html>

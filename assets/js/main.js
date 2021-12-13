@@ -98,6 +98,13 @@ $(document).mouseup(function (e) {
   });
 });
 
+$(".dash-menu-icon").on("click", function () {
+  $(this).toggleClass("open");
+  $(".dashboard-main").toggleClass("open");
+  $(".dashboard-sidebar").toggleClass("close");
+  // $(".nav-header").toggleClass("shadow");
+});
+
 // Account dropdown
 $(document).mouseup(function (e) {
   var fnav = $(".navbar-account");
@@ -299,6 +306,10 @@ $(".blab-alert button").click(function () {
 
 $(".dash-blab-alert button").click(function () {
   $(".dash-blab-alert").slideUp();
+});
+
+$(".dash-info-close").click(function () {
+  $(".dash-info").slideUp();
 });
 
 // Filter toggle
