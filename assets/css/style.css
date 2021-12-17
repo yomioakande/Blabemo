@@ -2747,16 +2747,18 @@ input[type="file"] {
 }
 .hero {
   width: 100%;
-  height: auto;
-  min-height: calc(100vh - 65px);
-  padding-left: 90px;
   background: #ffebff url("../images/lines.svg") 95% no-repeat;
   color: #000000;
+}
+.hero .b1 {
+  min-height: calc(100vh - 65px);
   position: relative;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 .caption {
-  padding: 120px 0;
+  padding-left: 100px;
   position: relative;
 }
 .caption h2 {
@@ -2774,7 +2776,8 @@ input[type="file"] {
 }
 .quote {
   position: absolute;
-  bottom: -90px;
+  bottom: 30px;
+  left: 60px;
   max-width: 55%;
   width: fit-content;
   color: #8d8d8d;
@@ -2837,9 +2840,6 @@ input[type="file"] {
   border: 2px solid #ff6634;
   color: #ff6634;
 }
-.hero-right {
-  position: relative;
-}
 .hero-img {
   position: absolute;
   bottom: 0;
@@ -2848,29 +2848,29 @@ input[type="file"] {
   width: auto;
   max-width: 100%;
 }
-.hero-img .review {
+.b1 .review {
   position: absolute;
   bottom: 5%;
-  left: 10%;
+  left: 0%;
   background-color: #ffffff;
   width: 280px;
   margin: 0;
 }
-.hero-img .employee-reviews {
+.b1 .employee-reviews {
   width: 86px;
   height: 86px;
   position: absolute;
-  right: 15%;
-  top: 30%;
+  right: 8%;
+  top: 25%;
   background-color: #ffffff;
   border-radius: 6px;
   padding: 10px 15px;
   text-align: center;
 }
-.hero-img .hero-chart {
+.b1 .hero-chart {
   position: absolute;
-  top: 25%;
-  left: 30%;
+  top: 20%;
+  left: 20%;
   background-color: #ffffff;
   border-radius: 6px;
   padding: 10px;
@@ -3242,26 +3242,26 @@ input[type="file"] {
 }
 /* ########## Progress Circle End ########## */
 
-.hero-img .employee-reviews h5 {
+.b1 .employee-reviews h5 {
   font-family: "Montserrat-Black";
   font-weight: 900;
   font-size: calc(18px + (32 - 18) * ((100vw - 300px) / 1300));
   color: #ff6634;
   margin: 0;
 }
-.hero-img .employee-reviews p {
+.b1 .employee-reviews p {
   color: #6c6c6c;
   font-size: calc(9px + (12 - 9) * ((100vw - 300px) / 1300));
 }
-.hero-img .review-info {
+.b1 .review-info {
   padding: 15px 20px 0px;
 }
-.hero-img .review-text {
+.b1 .review-text {
   font-size: 12px;
   margin: 10px 0 0;
   width: 100%;
 }
-.hero-img .reviewer {
+.b1 .reviewer {
   padding: 5px 20px 15px;
 }
 .featured-reviews {
@@ -4272,6 +4272,10 @@ footer p {
   font-family: "Montserrat-SemiBold";
 }
 @media screen and (max-width: 991px) {
+  .b1 {
+    min-height: auto !important;
+    flex-direction: column;
+  }
   .dash-header {
     padding: 0 10px;
     height: 65px;
@@ -4363,6 +4367,7 @@ footer p {
   .quote {
     position: relative;
     bottom: 0;
+    left: 0;
     max-width: 80%;
     margin: 30px 10%;
   }
@@ -4385,39 +4390,39 @@ footer p {
     width: 110vw;
     height: auto;
   }
-  .hero-img .review {
+  .b1 .review {
     bottom: 5%;
     left: 0%;
     width: 130px;
   }
-  .hero-img .employee-reviews {
+  .b1 .employee-reviews {
     width: 60px;
     height: 60px;
     right: 5%;
     padding: 5px;
   }
-  .hero-img .review-info {
+  .b1 .review-info {
     padding: 5px 10px 0px;
   }
-  .hero-img .review-text {
+  .b1 .review-text {
     font-size: 7px;
     margin: 5px 0 0;
   }
-  .hero-img .reviewer {
+  .b1 .reviewer {
     padding: 5px;
   }
-  .hero-img .reviewer-img {
+  .b1 .reviewer-img {
     width: 15px;
     height: 15px;
     margin-right: 5px;
   }
-  .hero-img .reviewer-info h5 {
+  .b1 .reviewer-info h5 {
     font-size: 9px;
   }
-  .hero-img .reviewer-info p {
+  .b1 .reviewer-info p {
     font-size: 7px;
   }
-  .hero-img .hero-chart {
+  .b1 .hero-chart {
     top: 5%;
     left: 5%;
   }
