@@ -114,6 +114,7 @@
               </p>
               <div class="hero-search">
                 <input
+                  id="heroSearch"
                   type="text"
                   placeholder="Search for Companies"
                   autocomplete="off"
@@ -125,6 +126,15 @@
                 >
                   Search
                 </button>
+                <ul class="hero-search-result">
+                  <li>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </li>
+                  <li>
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua
+                  </li>
+                </ul>
               </div>
               <p class="animation-element slide-up">
                 Already have an account? <a href="">Sign In</a>
@@ -693,6 +703,15 @@
     <script src="assets/js/main.js"></script>
 
     <script>
+      $("#heroSearch").keyup(function () {
+        let searchQuery = $(this).val();
+        if (searchQuery.length > 0) {
+          $(".hero-search-result").show();
+        } else {
+          $(".hero-search-result").hide();
+        }
+      });
+
       $("#clients").slick({
         slidesToShow: 5,
         slidesToScroll: 5,

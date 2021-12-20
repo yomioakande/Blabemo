@@ -2500,6 +2500,7 @@ input[type="file"] {
   content: url("../images/bottom-quote.svg");
 }
 .hero-search {
+  position: relative;
   margin: 35px 0;
   height: 72px;
   padding: 7px;
@@ -2544,6 +2545,22 @@ input[type="file"] {
   background-color: transparent;
   border: 2px solid #ff6634;
   color: #ff6634;
+}
+.hero-search-result {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 5px;
+  background-color: #ffffff;
+  z-index: 9999;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.hero-search-result li {
+  padding: 5px 10px;
 }
 .hero-img {
   position: absolute;
