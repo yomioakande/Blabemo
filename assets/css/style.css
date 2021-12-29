@@ -227,6 +227,10 @@ img {
 .business-info h3 {
   font-family: "Montserrat-SemiBold";
   margin-bottom: 5px;
+  overflow: hidden;
+  max-width: 20ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .rating {
   font-family: "Montserrat-SemiBold";
@@ -241,6 +245,7 @@ img {
   border: 1px solid #ff6634;
   color: #ff6634;
   padding: 10px 15px;
+  min-width: 146px;
   border-radius: 5px;
 }
 .result-info-header button:hover {
@@ -251,6 +256,10 @@ img {
   width: 80%;
   font-size: 16px;
   margin-bottom: 15px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .location {
   color: #ff6634;
@@ -352,6 +361,9 @@ img {
 .signup-logo {
   width: 120px;
   margin: 0 auto 10px;
+}
+.signup-options > button {
+  width: 100%;
 }
 .signup-options li {
   padding: 10px;
@@ -2554,6 +2566,7 @@ input[type="file"] {
   width: 100%;
   margin-top: 5px;
   background-color: #ffffff;
+  padding: 10px 5px;
   z-index: 9999;
   border-radius: 5px;
   -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
@@ -2561,6 +2574,10 @@ input[type="file"] {
 }
 .hero-search-result li {
   padding: 5px 10px;
+  cursor: pointer;
+}
+.hero-search-result li:hover {
+  color: #ff6634;
 }
 .hero-img {
   position: absolute;

@@ -337,38 +337,6 @@
                   </div>
 
                   <div class="review-login">
-                    <ul class="signup-options">
-                      <a href="">
-                        <li class="linkedin">
-                          <img
-                            src="assets/images/continue-with-linkedin.svg"
-                            alt=""
-                          />
-                          Continue with Linkedin
-                        </li></a
-                      >
-                      <a href=""
-                        ><li class="facebook">
-                          <img
-                            src="assets/images/continue-with-facebook.svg"
-                            alt=""
-                          />
-                          Continue with Facebook
-                        </li></a
-                      >
-                      <a href=""
-                        ><li class="google">
-                          <img
-                            src="assets/images/continue-with-google.png"
-                            alt=""
-                          />
-                          Continue with Google
-                        </li></a
-                      >
-                    </ul>
-                    <h6>OR</h6>
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
                     <label class="checkbox"
                       >I agree to BlabEmo
                       <a
@@ -384,9 +352,46 @@
                         data-bs-target="#privacyPolicyModal"
                         >Privacy Policy</a
                       >
-                      <input name="consent" type="checkbox" value="" />
+                      <input
+                        id="consent"
+                        name="consent"
+                        type="checkbox"
+                        value=""
+                      />
                       <span class="checkmark"></span>
                     </label>
+                    <ul class="signup-options">
+                      <button type="button">
+                        <li class="linkedin">
+                          <img
+                            src="assets/images/continue-with-linkedin.svg"
+                            alt=""
+                          />
+                          Continue with Linkedin
+                        </li>
+                      </button>
+                      <button type="button">
+                        <li class="facebook">
+                          <img
+                            src="assets/images/continue-with-facebook.svg"
+                            alt=""
+                          />
+                          Continue with Facebook
+                        </li>
+                      </button>
+                      <button type="button">
+                        <li class="google">
+                          <img
+                            src="assets/images/continue-with-google.png"
+                            alt=""
+                          />
+                          Continue with Google
+                        </li>
+                      </button>
+                    </ul>
+                    <h6>OR</h6>
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
                   </div>
 
                   <button type="button" id="postReview" class="submit-btn">
@@ -1078,6 +1083,14 @@
           $("#rating").text(ratingVal);
         } else {
           $("#rating").text("0.0");
+        }
+      });
+
+      $("#consent").change(function () {
+        if (this.checked) {
+          $(".signup-options button").prop("disabled", false);
+        } else {
+          $(".signup-options button").prop("disabled", true);
         }
       });
     </script>

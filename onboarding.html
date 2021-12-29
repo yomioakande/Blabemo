@@ -117,6 +117,7 @@
                         a more
                       </div>
                     </div>
+                    <input hidden type="text" name="" id="selectedTags" />
                     <select name="" id="">
                       <option value="" selected disabled>Age Range</option>
                       <option value="">18-24</option>
@@ -300,15 +301,21 @@
 
     <script>
       const myData = [
-        { text: "Body Enhancement", value: 1 },
-        { text: "Age", value: 2 },
-        { text: "Religous", value: 3 },
+        { text: "Body Enhancement", value: "Body Enhancement" },
+        { text: "Age", value: "Age" },
+        { text: "Religous", value: "Religous" },
       ];
+
+      let minorityGroups = [];
 
       $("#tags").multiSelect({
         data: myData,
         listen(tags, item, operate) {
-          console.log(tags, item, operate);
+          $(".m--s-tag").each(function () {
+            let selectedTags = $(this).attr("value");
+            minorityGroups.push(selectedTags);
+          });
+          $("#selectedTags").val([...new Set(minorityGroups)]);
         },
       });
     </script>

@@ -14,7 +14,7 @@
     this._ORDER_ATTR = options.orderBy;
     this._LABEL_ATTR = options.label;
 
-    this.optionLists = options.data || [];
+    this.optionLists = options.data || {};
     this.init();
   }
   multiSelect.prototype.renderBaseDom = function () {
