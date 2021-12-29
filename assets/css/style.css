@@ -1318,11 +1318,21 @@ img {
   font-size: 13px;
   position: relative;
 }
-.blab-info p .year-of-occurence {
-  position: absolute;
-  bottom: 0;
-  right: 10px;
-  color: #ff6634;
+.blab-tags,
+.year-of-occurence {
+  display: inline-block;
+}
+.blab-info .year-of-occurence {
+  font-family: "Montserrat-Medium";
+  float: right;
+  color: #787878;
+  display: flex;
+  align-items: center;
+}
+.year-of-occurence img {
+  height: 14px;
+  width: auto;
+  margin-right: 5px;
 }
 .blab-icons {
   position: relative;
