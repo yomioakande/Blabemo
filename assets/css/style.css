@@ -2599,6 +2599,14 @@ input[type="file"] {
   height: auto;
   width: 100%;
 }
+.hero-img img {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 95px);
+  object-position: top;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
 .b1 .review {
   position: absolute;
   bottom: 10%;
