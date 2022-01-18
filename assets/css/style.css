@@ -4370,3 +4370,8 @@ footer p {
   font-size: calc(18px + (36 - 18) * ((100vw - 300px) / 1300));
   color: #ff6634;
 }
+.minorityGroupLabel {
+  float: left;
+  color: #232323;
+  font-family: "Montserrat-SemiBold";
+}

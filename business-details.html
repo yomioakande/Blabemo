@@ -319,14 +319,14 @@
                     id=""
                     cols="30"
                     rows="10"
-                    placeholder="Write review..."
+                    placeholder="Write review... (required)"
                   ></textarea>
 
                   <input
                     type="text"
                     name=""
                     id="year"
-                    placeholder="Year of Occurence"
+                    placeholder="Year of Occurence (required)"
                   />
 
                   <div class="recaptcha">
@@ -1052,6 +1052,7 @@
         format: "yyyy",
         viewMode: "years",
         minViewMode: "years",
+        endDate: "+0d",
         autoclose: true,
       });
 

@@ -79,18 +79,6 @@
               <form class="signup-form" action="" method="post">
                 <div class="row">
                   <div class="col-md-6">
-                    <input
-                      type="text"
-                      name=""
-                      id="username"
-                      placeholder="Username"
-                    />
-                    <input
-                      type="password"
-                      name=""
-                      id="password"
-                      placeholder="Password"
-                    />
                     <select name="" id="gender">
                       <option value="" selected disabled>Gender</option>
                       <option value="male">Male</option>
@@ -101,14 +89,16 @@
                       <option value="">African</option>
                       <option value="">Africa-American</option>
                     </select>
+                    <select name="" id="">
+                      <option value="" selected disabled>Age Range</option>
+                      <option value="">18-24</option>
+                      <option value="">25-40</option>
+                    </select>
                   </div>
                   <div class="col-md-6">
-                    <input
-                      type="email"
-                      name=""
-                      id="email"
-                      placeholder="steve@gmail.com"
-                    />
+                    <label class="minorityGroupLabel" for="minority group"
+                      >Minority Group</label
+                    >
                     <div class="onboarding-tags" id="tags">
                       <div class="tag-info">
                         Our firm is a long established fact that a reader will
@@ -118,11 +108,6 @@
                       </div>
                     </div>
                     <input hidden type="text" name="" id="selectedTags" />
-                    <select name="" id="">
-                      <option value="" selected disabled>Age Range</option>
-                      <option value="">18-24</option>
-                      <option value="">25-40</option>
-                    </select>
                   </div>
                 </div>
 
@@ -295,7 +280,6 @@
     </div>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/sweetalert.min.js"></script>
     <script src="assets/js/jquery-multi-select.js"></script>
     <script src="assets/js/main.js"></script>
 
@@ -304,6 +288,18 @@
         { text: "Body Enhancement", value: "Body Enhancement" },
         { text: "Age", value: "Age" },
         { text: "Religous", value: "Religous" },
+        { text: "Religous1", value: "Religous1" },
+        { text: "Religous2", value: "Religous2" },
+        { text: "Religous3", value: "Religous3" },
+        { text: "Religous4", value: "Religous4" },
+        { text: "Religous5", value: "Religous5" },
+        { text: "Religous6", value: "Religous6" },
+        { text: "Religous7", value: "Religous7" },
+        { text: "Religous8", value: "Religous8" },
+        { text: "Religous9", value: "Religous9" },
+        { text: "Religous10", value: "Religous10" },
+        { text: "Religous11", value: "Religous11" },
+        { text: "Religous12", value: "Religous12" },
       ];
 
       let minorityGroups = [];
@@ -315,6 +311,10 @@
             let selectedTags = $(this).attr("value");
             minorityGroups.push(selectedTags);
           });
+          $(".m--s-tag-container").animate(
+            { scrollTop: $(".m--s-tag-container").prop("scrollHeight") },
+            1000
+          );
           $("#selectedTags").val([...new Set(minorityGroups)]);
         },
       });
