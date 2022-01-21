@@ -1085,6 +1085,7 @@ img {
 .timeline-left-sidebar2 {
   border: 1px solid #f4f4f4;
   margin-bottom: 30px;
+  transition: all 5s;
 }
 .timeline-profile {
   padding: 20px 15px 5px;
@@ -1242,6 +1243,10 @@ img {
 }
 .blab-message-footer {
   display: flex;
+}
+.picker > span {
+  font-size: 16px;
+  padding: 0 5px;
 }
 .blab-ratings {
   background-color: #fbfbfb;
@@ -2425,9 +2430,7 @@ input[type="file"] {
   position: fixed;
   bottom: 0;
   width: 20.5%;
-  -webkit-transition: 0.05 ease;
-  -o-transition: 0.05 ease;
-  transition: 0.05 ease;
+  transition: all 5s;
 }
 .middleDiv {
   overflow-y: auto;
@@ -4037,6 +4040,9 @@ footer p {
   font-family: "Montserrat-SemiBold";
 }
 @media screen and (max-width: 991px) {
+  .picker {
+    padding: 0 !important;
+  }
   .b1 {
     min-height: auto !important;
     flex-direction: column;
@@ -4380,4 +4386,9 @@ footer p {
   position: absolute;
   right: 0;
   margin-top: -15px;
+}
+.refresh-loader {
+  text-align: center;
+  font-size: 24px;
+  color: #ff6634;
 }

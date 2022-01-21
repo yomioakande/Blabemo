@@ -50,12 +50,12 @@ $(function () {
       let divHeight = $(".timeline-right-sidebar").height();
       $(".middleDiv").height(divHeight + "px");
 
-      let height = $(".timeline-left-sidebar").height() / 2;
-      if ($(window).scrollTop() >= height) {
-        $(".timeline-left-sidebar").addClass("fixed");
-      } else if ($(window).scrollTop() < height) {
-        $(".timeline-left-sidebar").removeClass("fixed");
-      }
+      // let height = $(".timeline-left-sidebar").height() / 2;
+      // if ($(window).scrollTop() >= height) {
+      //   $(".timeline-left-sidebar").addClass("fixed");
+      // } else if ($(window).scrollTop() < height) {
+      //   $(".timeline-left-sidebar").removeClass("fixed");
+      // }
     }
   }
   $(window).on("scroll", function () {
@@ -260,7 +260,6 @@ $window.trigger("scroll");
 // See More Onclick loading icon
 $(".fa-spinner").hide();
 $(".more").click(function () {
-  // $(this).hide();
   $(this).siblings(".fa-spinner").toggle();
 });
 
