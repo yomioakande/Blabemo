@@ -1490,6 +1490,7 @@
         width: 220,
         height: 120,
         twemoji: true,
+        closeOnSelect: false,
         onSelect: function (emoji) {
           let currentValue = $("#blabMessage").val();
           $("#blabMessage").val(currentValue + unicodeToEmoji(emoji.value) + ' ');
