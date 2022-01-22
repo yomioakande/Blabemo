@@ -183,13 +183,49 @@
               <img src="assets/images/Ellipse 3.png" alt="" />
             </div>
             <div class="blab-message">
-              <textarea
+              <div class="blab-message-input">
+                <textarea
                 name=""
                 id="blabMessage"
                 cols="30"
                 rows="5"
                 placeholder="What is on your mind"
               ></textarea>
+              <ul class="hashTagResults">
+                <li>
+                  <p>#racism</p>
+                  <span>456,980 public posts</span>
+                </li>
+                <li>
+                  <p>#nepotism</p>
+                  <span>456,980 public posts</span>
+                </li>
+                <li>
+                  <p>#gender</p>
+                  <span>456,980 public posts</span>
+                </li>
+              </ul>
+              <ul class="mentionResults">
+                <li>
+                  <div class="mentionedBrandLogo">
+                    <img src="assets/images/airbnb.png" alt="">
+                  </div>
+                  <div class="mentionedBrandName">Airbnb</div>
+                </li>
+                <li>
+                  <div class="mentionedBrandLogo">
+                    <img src="assets/images/startbucks.png" alt="">
+                  </div>
+                  <div class="mentionedBrandName">Starbucks</div>
+                </li>
+                <li>
+                  <div class="mentionedBrandLogo">
+                    <img src="assets/images/starcorn.png" alt="">
+                  </div>
+                  <div class="mentionedBrandName">Starcorn</div>
+                </li>
+              </ul>
+              </div>
               <div class="blab-message-count"><span>0</span>/250</div>
               <div class="blab-message-footer">
                 <button type="button" class="submit-btn" id="postBlab">
@@ -1521,6 +1557,16 @@
             (m, idx) => `&#x${m.codePointAt(0).toString(16)}`
           )
         );
+      });
+
+      // If the @ or # symbol is pressed
+      $('#blabMessage').keyup(function (){
+        let lastKey = $(this).val().slice(-1);
+        if (lastKey == '@') {
+          $('.mentionResults').show();
+        }else if(lastKey == '#'){
+          $('.hashTagResults').show();
+        }
       });
 
     </script>
