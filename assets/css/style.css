@@ -1340,6 +1340,7 @@ img {
   margin-bottom: 0;
   display: flex;
   align-items: center;
+  max-width: calc(100% - 80px);
 }
 .blab-info-top h5 .rating,
 .dash-review-header .rating {
@@ -1365,6 +1366,8 @@ img {
 .blab-info-top > span {
   color: #d4d4d4;
   font-size: 12px;
+  width: 80px;
+  text-align: right;
 }
 .blab-info p {
   font-size: 13px;
@@ -4386,7 +4389,7 @@ footer p {
 .refresh-prompt {
   display: none;
   position: fixed;
-  top: 100px;
+  top: 120px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #ff6634;
