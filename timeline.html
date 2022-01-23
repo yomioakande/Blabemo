@@ -1530,6 +1530,7 @@
         onSelect: function (emoji) {
           let currentValue = $("#blabMessage").val();
           $("#blabMessage").val(currentValue + unicodeToEmoji(emoji.value) + ' ');
+          $('#blabMessage').focus();
         },
       });
 
@@ -1560,13 +1561,34 @@
       });
 
       // If the @ or # symbol is pressed
-      $('#blabMessage').keyup(function (){
+      $('#blabMessage').keyup(function (e){
         let lastKey = $(this).val().slice(-1);
         if (lastKey == '@') {
           $('.mentionResults').show();
         }else if(lastKey == '#'){
           $('.hashTagResults').show();
+        }else if(lastKey == ' ' || e.keyCode == 13){
+          $('.mentionResults').hide();
+          $('.hashTagResults').hide();
         }
+      });
+
+      $('.hashTagResults li').click(function(){
+        let hashTag = $(this).find('p').text();
+        let value = $('#blabMessage').val();
+        value = value.split('#')[0];
+        $('#blabMessage').val(value + hashTag);
+        $('#blabMessage').focus();
+        $('.hashTagResults').hide();
+      });
+
+      $('.mentionResults li').click(function(){
+        let brand = $(this).find('.mentionedBrandName').text();
+        let value = $('#blabMessage').val();
+        value = value.split('@')[0];
+        $('#blabMessage').val(value +'@'+ brand);
+        $('#blabMessage').focus();
+        $('.mentionResults').hide();
       });
 
     </script>
