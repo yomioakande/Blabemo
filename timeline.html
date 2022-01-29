@@ -1518,7 +1518,7 @@
         });
       });
 
-      $('.blab-icons li').click(function(){
+      $(document).on('click', '.blab-icons li', function(e){
         $(this).toggleClass('active');
       });
 
@@ -1563,11 +1563,12 @@
       // If the @ or # symbol is pressed
       $('#blabMessage').keyup(function (e){
         let lastKey = $(this).val().slice(-1);
+        console.log(lastKey);
         if (lastKey == '@') {
           $('.mentionResults').show();
         }else if(lastKey == '#'){
           $('.hashTagResults').show();
-        }else if(lastKey == ' ' || e.keyCode == 13){
+        }else if(lastKey == ' ' || e.keyCode == 13 || lastKey == ''){
           $('.mentionResults').hide();
           $('.hashTagResults').hide();
         }
