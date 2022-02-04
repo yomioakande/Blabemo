@@ -887,6 +887,7 @@ img {
   height: 70px;
   border-radius: 50%;
   overflow: hidden;
+  cursor: pointer;
 }
 .recent-review-info,
 .blab-info {
@@ -1096,11 +1097,15 @@ img {
   height: 100px;
   margin: 0 auto 5px;
   position: relative;
+  cursor: pointer;
 }
 .profile-img img,
 .blab-img img,
 .recent-review-img img {
   border-radius: 50%;
+}
+.blab-img img {
+  width: 100% !important;
 }
 .edit-pix {
   display: flex;
@@ -1286,7 +1291,8 @@ img {
   padding: 10px;
   margin-bottom: 10px;
 }
-.blab-message textarea::placeholder {
+.blab-message textarea::placeholder,
+.comment-msg textarea::placeholder {
   color: #d6d6d6;
 }
 .blab-message-footer {
@@ -1316,8 +1322,9 @@ img {
 .handles {
   margin: 40px 0 30px;
 }
-.blab,
+.blab-content,
 .handle {
+  position: relative;
   display: flex;
   border-top: 1px solid #f4f4f4;
   padding: 20px 0;
@@ -1374,6 +1381,7 @@ img {
 .blab-info p {
   font-size: 13px;
   position: relative;
+  cursor: pointer;
 }
 .blab-tags,
 .year-of-occurence {
@@ -1464,6 +1472,39 @@ img {
 }
 .blab-comment .blab-info p {
   font-size: 11px;
+}
+.comment {
+  position: relative;
+  display: none;
+  width: 100%;
+}
+.comment.show,
+.blab-comments .comment {
+  display: flex;
+}
+.comment-count {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+}
+.comment-img {
+  width: 40px;
+  height: 40px;
+  margin: 0 20px;
+}
+.comment-msg textarea {
+  width: 100%;
+  background-color: #fafafa;
+  font-size: 14px;
+  color: #797979;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.comment-msg {
+  width: calc(100% - 80px);
 }
 .sidebar-search {
   background: #f9f9f9 url("../images/search-icon.svg") no-repeat 10px center;
@@ -4399,6 +4440,7 @@ footer p {
   border-radius: 45px;
   align-items: center;
   color: #ffffff;
+  cursor: pointer;
 }
 .refresh-prompt.show {
   display: flex;
