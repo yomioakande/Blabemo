@@ -15,9 +15,9 @@ $(function () {
 // Refresh Prompt
 $(function () {
   function sticky() {
-    if ($(window).scrollTop() >= 450) {
+    if ($(".middleDiv").scrollTop() >= 350) {
       $(".refresh-prompt").addClass("show");
-    } else if ($(window).scrollTop() < 450) {
+    } else if ($(".middleDiv").scrollTop() < 350) {
       $(".refresh-prompt").removeClass("show");
     }
   }
@@ -47,7 +47,7 @@ $(function () {
 $(function () {
   function sticky2() {
     if ($(window).innerWidth() > 991) {
-      let divHeight = $(".timeline-right-sidebar").height();
+      let divHeight = $(".timeline-right-sidebar").innerHeight();
       $(".middleDiv").height(divHeight + "px");
 
       // let height = $(".timeline-left-sidebar").height() / 2;
@@ -258,7 +258,7 @@ $window.on("scroll resize", check_if_in_view);
 $window.trigger("scroll");
 
 // See More Onclick loading icon
-$(".fa-spinner").hide();
+$(".link .fa-spinner").hide();
 $(".more").click(function () {
   $(this).siblings(".fa-spinner").toggle();
 });
