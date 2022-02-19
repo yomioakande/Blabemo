@@ -2027,7 +2027,8 @@
     $('.hashTagResults li').click(function () {
       let hashTag = $(this).find('p').text();
       let value = $('#blabMessage').val();
-      value = value.split('#')[0];
+      let lastIndex = value.lastIndexOf('#');
+      value = value.substr(0, lastIndex);
       $('#blabMessage').val(value + hashTag);
       $('#blabMessage').focus();
       $('.hashTagResults').hide();
@@ -2036,7 +2037,8 @@
     $('.mentionResults li').click(function () {
       let brand = $(this).find('.mentionedBrandName').text();
       let value = $('#blabMessage').val();
-      value = value.split('@')[0];
+      let lastIndex = value.lastIndexOf('@');
+      value = value.substr(0, lastIndex);
       $('#blabMessage').val(value + '@' + brand);
       $('#blabMessage').focus();
       $('.mentionResults').hide();

@@ -1080,13 +1080,16 @@ img {
   display: block !important;
 }
 .page-content {
-  padding: 60px 90px 15px;
+  padding: 60px 90px 0px;
 }
 .timeline-left-sidebar,
 .timeline-left-sidebar2 {
   border: 1px solid #f4f4f4;
   margin-bottom: 30px;
   transition: all 5s;
+}
+.timeline-right-sidebar {
+  padding-bottom: 15px;
 }
 .timeline-profile {
   padding: 20px 15px 5px;
