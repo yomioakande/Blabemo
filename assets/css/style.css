@@ -2600,6 +2600,7 @@ input[type="file"] {
 }
 .hero .b1 {
   min-height: calc(100vh - 85px);
+  height: 550px;
   position: relative;
   display: flex;
   align-items: center;
@@ -4158,6 +4159,11 @@ footer p {
   color: #ff6634;
   font-family: "Montserrat-SemiBold";
 }
+@media screen and (max-width: 1024px) {
+  .hero {
+    padding: 0 15px;
+  }
+}
 @media screen and (max-width: 991px) {
   .picker {
     padding: 0 !important;
@@ -4479,6 +4485,16 @@ footer p {
 }
 .refresh-prompt ul li {
   margin-left: -10px;
+}
+.subnav-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.subnav-header span {
+  color: #555555;
+  padding-left: 15px;
+  font-family: "Montserrat-SemiBold";
 }
 .nav-back {
   display: flex;
