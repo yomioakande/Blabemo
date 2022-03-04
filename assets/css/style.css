@@ -1489,33 +1489,34 @@ img {
   position: relative;
   display: none;
   width: 100%;
+  margin-bottom: 10px;
 }
 .comment.show,
 .blab-comments .comment {
   display: flex;
 }
 .comment-count {
-  position: absolute;
-  color: #000000;
-  bottom: 28px;
-  right: 7px;
   font-size: 12px;
+  margin-top: 5px;
 }
 .comment-btn {
-  background-color: #ff6634;
-  padding: 5px 15px;
-  color: #ffffff;
-  border-radius: 5px;
-  margin: -25px 0 10px;
+  padding: 10px;
+  border-left: 1px solid #d4d4d4;
 }
 .comment-img {
   width: 40px;
   height: 40px;
   margin: 0 20px;
 }
+.comment-msg {
+  background-color: #fafafa;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 .comment-msg textarea {
   width: 100%;
-  background-color: #fafafa;
+  background-color: transparent;
   font-size: 14px;
   color: #797979;
   border: none;
@@ -1525,7 +1526,7 @@ img {
   min-height: 60px;
   max-height: 60px;
 }
-.comment-msg {
+.comment-msg-container {
   width: calc(100% - 80px);
 }
 .sidebar-search {
@@ -1729,29 +1730,79 @@ input[type="file"] {
   height: auto;
 }
 .toolbox {
-  position: relative;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  width: 100%;
-  margin: 0;
 }
 .toolbox li {
   display: inline-block;
   text-align: center;
   padding: 5px 10px;
-  background: #fff;
+  background: #f4f4f4;
   margin: 5px;
   min-height: 30px;
   min-width: 30px;
   border-radius: 5px;
   font-size: 1rem;
-  color: #2e3b46;
-  border: 1px solid #2e3b46;
+  color: #515151;
+  border: none;
   cursor: pointer;
 }
+.toolbox li:last-of-type {
+  font-size: 0.85rem;
+}
 .toolbox li:hover {
-  border-color: #ff6634;
+  background: #ff6634;
+  color: #fff;
+}
+.profile-switch {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-switch button {
+  color: #ffffff;
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 5px;
+}
+.profile-switch .switch {
+  background-color: #1f1f1f;
+  border: 2px solid #1f1f1f;
+  margin-right: 20px;
+}
+.profile-switch .save {
+  background-color: #ff6634;
+  border: 2px solid #ff6634;
+}
+.profile-switch .switch:hover {
+  background-color: transparent;
+  color: #1f1f1f;
+}
+.profile-switch .save:hover {
+  background-color: transparent;
   color: #ff6634;
+}
+.avatar-container {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 5px;
+  max-height: 450px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.avatar-container li {
+  width: 24%;
+  padding: 5px;
+  margin: 1px;
+  display: inline-block;
+}
+.avatar-container li:hover,
+.avatar-container li.active {
+  border: 2px solid #ff6634;
+  border-radius: 50%;
 }
 @media screen and (max-width: 991px) {
   .page-content {
@@ -1812,6 +1863,9 @@ input[type="file"] {
   }
 }
 @media screen and (max-width: 540px) {
+  .avatar-container {
+    padding: 10px;
+  }
   .handle-info {
     width: calc(100% - 80px);
   }

@@ -300,6 +300,7 @@ $("#crop").on("click", function (ev) {
     })
     .then(function (response) {
       $(".profile-img>img").attr("src", response);
+      $(".navbar-account>img").attr("src", response);
       $("#profileImgModal").modal("hide");
     });
 });
