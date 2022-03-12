@@ -1029,14 +1029,11 @@ img {
   position: relative;
   cursor: pointer;
 }
-.navbar-account img {
+.navbar-account > img {
   width: 35px;
   height: 35px;
   border-radius: 50%;
   margin-right: 5px;
-}
-.navbar-account i {
-  color: #8d8d8d;
 }
 .account-dropdown {
   display: none;
@@ -1794,7 +1791,7 @@ input[type="file"] {
   flex-wrap: wrap;
 }
 .avatar-container li {
-  width: 24%;
+  width: 16%;
   padding: 5px;
   margin: 1px;
   display: inline-block;
