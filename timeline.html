@@ -1878,7 +1878,7 @@
               <li class="follow">
                 <img src="assets/images/feature-1.png" alt="" />
                 <div class="follow-info">
-                  <div>
+                  <div class="follow-info-details">
                     <h5>Anonymous</h5>
                     <p>Data analysis</p>
                   </div>
@@ -1888,7 +1888,7 @@
               <li class="follow">
                 <img src="assets/images/Ellipse 3.png" alt="" />
                 <div class="follow-info">
-                  <div>
+                  <div class="follow-info-details">
                     <h5>Philip</h5>
                     <p>Product design</p>
                   </div>
@@ -1898,8 +1898,8 @@
               <li class="follow">
                 <img src="assets/images/Ellipse 6.png" alt="" />
                 <div class="follow-info">
-                  <div>
-                    <h5>Courtney</h5>
+                  <div class="follow-info-details">
+                    <h5>CourtneyCourtney Courtney</h5>
                     <p>Software Engineer</p>
                   </div>
                   <button type="button">Follow</button>
@@ -2089,7 +2089,10 @@
         $('#blabMessage').focus();
       },
     });
-
+    
+    $(".picker").click(function (){
+      $('.lsx-emojipicker-appender').show();
+    })
     function unicodeToEmoji(string) {
       let unicode = string.slice(3);
       emoji = String.fromCodePoint(parseInt(unicode, 16))
@@ -2128,6 +2131,9 @@
         $('.mentionResults').hide();
         $('.hashTagResults').hide();
       }
+    });
+    $('#blabMessage').keyup(function (e) {
+      $('.lsx-emojipicker-appender').hide();
     });
 
     $('.hashTagResults li').click(function () {

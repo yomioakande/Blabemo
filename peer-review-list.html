@@ -351,5 +351,13 @@
     <script src="assets/js/croppie.min.js"></script>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+      $(".applied-filters ul li span").click(function () {
+        let dis = $(this);
+        let container = dis.parent();
+        container.hide();
+      });
+    </script>
   </body>
 </html>

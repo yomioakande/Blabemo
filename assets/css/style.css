@@ -1578,10 +1578,13 @@ img {
 }
 .follow-info {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin-left: 15px;
+}
+.follow-info-details {
+  width: calc(100% - 75px);
+  display: inline-block;
+  vertical-align: middle;
+  word-wrap: break-word;
 }
 .follow-info h5 {
   font-family: "Montserrat-Medium";
@@ -1597,7 +1600,9 @@ img {
   color: #ff6634;
   border: 1px solid #ff6634;
   border-radius: 5px;
-  padding: 5px 15px;
+  padding: 5px 10px;
+  margin-left: auto;
+  display: inline-block;
 }
 .follow-info button:hover {
   background-color: #ff6634;

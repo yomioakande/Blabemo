@@ -1,8 +1,8 @@
 $(function () {
   function sticky() {
-    if ($(window).scrollTop() >= 30) {
+    if ($(window).scrollTop() >= 1) {
       $(".nav-header").addClass("sticky");
-    } else if ($(window).scrollTop() < 30) {
+    } else if ($(window).scrollTop() < 1) {
       $(".nav-header").removeClass("sticky");
     }
   }
