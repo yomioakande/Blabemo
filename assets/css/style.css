@@ -1566,6 +1566,7 @@ img {
   border-bottom: 1px solid #f4f4f4;
 }
 .follow {
+  width: 100%;
   display: flex;
   align-items: center;
   margin: 20px 0;
@@ -1621,6 +1622,17 @@ img {
   color: #ff6634;
   font-family: "Montserrat-SemiBold";
   font-size: 10px;
+}
+.trends .trend,
+.follows .follow {
+  border-bottom: 2px solid #f9f9f9;
+}
+.follows .follow {
+  margin: 0;
+  padding: 20px 0;
+}
+.trends .trend span {
+  font-size: 12px;
 }
 .sidebar-copyright {
   font-size: 12px;

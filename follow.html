@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="author" content="Yomi Akande" />
+    <meta
+      name="description"
+      content="Grow your business with real-time reviews"
+    />
+    <meta name="keywords" content="" />
+
+    <!--  Essential META Tags -->
+    <meta property="og:title" content="Blabemo" />
+    <meta
+      property="og:description"
+      content="Grow your business with real-time reviews"
+    />
+    <meta property="og:image" content="assets/images/favicon.ico" />
+    <meta property="og:url" content="" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:site_name" content="Blabemo" />
+    <meta name="twitter:image:alt" content="Blabemo logo" />
+
+    <!--  Non-Essential, But Required for Analytics -->
+    <meta property="fb:app_id" content="your_app_id" />
+    <meta name="twitter:site" content="@website-username" />
+
+    <title>Blabemo - Grow your business with real-time reviews</title>
+
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+
+    <!-- ########## CSS LINKS ########## -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/croppie.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/jquery.lsxemojipicker.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header begin -->
+    <header class="home-header" id="home">
+      <div class="nav-header">
+        <a href="">
+          <img
+            class="logo"
+            src="assets/images/blabemo.png"
+            height="35px"
+            alt="Blabemo Logo"
+          />
+        </a>
+
+        <div class="navbar-account">
+          <img src="assets/images/Ellipse 3.png" alt="" />
+          <span><img src="assets/images/down-arrow.png" alt="" /></span>
+          <ul class="account-dropdown">
+            <a href="#" class="lg-hidden">
+              <li>Timeline</li>
+            </a>
+            <a href="#" class="lg-hidden">
+              <li>Peer Review</li>
+            </a>
+            <a href="">
+              <li>Profile</li>
+            </a>
+            <a href="">
+              <li>Logout</li>
+            </a>
+          </ul>
+        </div>
+        <ul class="navigation2">
+          <a href="#">
+            <li>Timeline</li>
+          </a>
+          <a href="#">
+            <li>Peer Review</li>
+          </a>
+          <li>Hi, Johnson</li>
+        </ul>
+      </div>
+    </header>
+    <!-- Header end -->
+
+    <div class="col-12 lg-hidden">
+      <div class="sidebar-icons">
+        <i id="showSideProfile" class="fa fa-bars"></i>
+        <i id="showSidebarSearch" class="fa fa-search"></i>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="timeline-left-sidebar">
+            <div class="lg-hidden">
+              <span class="close">&times;</span>
+            </div>
+            <div class="timeline-profile">
+              <div class="profile-img">
+                <img src="assets/images/Ellipse 3.png" alt="" />
+                <div
+                  class="edit-pix"
+                  data-bs-toggle="modal"
+                  data-bs-target="#avatarModal"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.64801 2.80532L8.63926 3.82H10.833V9.90805H2.16634V3.82H4.36009L5.35134 2.80532H7.64801ZM8.12467 1.79065H4.87467L3.88342 2.80532H2.16634C1.57051 2.80532 1.08301 3.26193 1.08301 3.82V9.90805C1.08301 10.4661 1.57051 10.9227 2.16634 10.9227H10.833C11.4288 10.9227 11.9163 10.4661 11.9163 9.90805V3.82C11.9163 3.26193 11.4288 2.80532 10.833 2.80532H9.11592L8.12467 1.79065ZM6.49967 5.34201C7.39342 5.34201 8.12467 6.02692 8.12467 6.86402C8.12467 7.70113 7.39342 8.38604 6.49967 8.38604C5.60592 8.38604 4.87467 7.70113 4.87467 6.86402C4.87467 6.02692 5.60592 5.34201 6.49967 5.34201ZM6.49967 4.32734C5.00467 4.32734 3.79134 5.46377 3.79134 6.86402C3.79134 8.26427 5.00467 9.40071 6.49967 9.40071C7.99467 9.40071 9.20801 8.26427 9.20801 6.86402C9.20801 5.46377 7.99467 4.32734 6.49967 4.32734Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h6>Black or African American</h6>
+              <h5>Johnson</h5>
+              <div class="timeline-stats">
+                <div class="stat">
+                  <h3>25M</h3>
+                  <p>Reviews</p>
+                </div>
+                <div class="stat">
+                  <h3>45</h3>
+                  <p>Blabs</p>
+                </div>
+                <div class="stat">
+                  <h3>15K</h3>
+                  <p>Re-blabs</p>
+                </div>
+              </div>
+            </div>
+            <ul class="timeline-followers">
+              <li><span>2378</span> Following</li>
+              <li><span>150K</span> Followers</li>
+            </ul>
+            <div class="profile-stat">
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 60%"
+                  aria-valuenow="60"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <p>You have 40% to complete your profile</p>
+            </div>
+
+            <div class="timeline-tags">
+              <h5>Topics</h5>
+              <ul class="timeline-tag">
+                <li>racism</li>
+                <li>nepotism</li>
+                <li>sexual harrassment</li>
+                <li>nepotism</li>
+              </ul>
+              <h5>Minority group</h5>
+              <ul class="timeline-group">
+                <li>Body Enhancement <span>|</span></li>
+                <li>Age <span>|</span></li>
+                <li>Reglious</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 middleDiv">
+          <div class="subnav-header">
+            <div class="nav-back">
+              <i class="fa fa-arrow-left"></i>
+            </div>
+            <span>Follow people</span>
+          </div>
+
+          <ul class="follows">
+            <li class="follow">
+              <img src="assets/images/feature-1.png" alt="" />
+              <div class="follow-info">
+                <div class="follow-info-details">
+                  <h5>Anonymous</h5>
+                  <p>Data analysis</p>
+                </div>
+                <button type="button">Follow</button>
+              </div>
+            </li>
+            <li class="follow">
+              <img src="assets/images/Ellipse 3.png" alt="" />
+              <div class="follow-info">
+                <div class="follow-info-details">
+                  <h5>Philip</h5>
+                  <p>Product design</p>
+                </div>
+                <button type="button">Follow</button>
+              </div>
+            </li>
+            <li class="follow">
+              <img src="assets/images/Ellipse 6.png" alt="" />
+              <div class="follow-info">
+                <div class="follow-info-details">
+                  <h5>CourtneyCourtney Courtney</h5>
+                  <p>Software Engineer</p>
+                </div>
+                <button type="button">Follow</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="timeline-right-sidebar">
+            <div class="lg-hidden">
+              <span class="close">&times;</span>
+            </div>
+            <input
+              class="sidebar-search"
+              type="text"
+              name=""
+              id=""
+              placeholder="Search"
+            />
+
+            <div class="follow-people">
+              <h5>Follow people of same interest</h5>
+              <ul>
+                <li class="follow">
+                  <img src="assets/images/feature-1.png" alt="" />
+                  <div class="follow-info">
+                    <div class="follow-info-details">
+                      <h5>Anonymous</h5>
+                      <p>Data analysis</p>
+                    </div>
+                    <button type="button">Follow</button>
+                  </div>
+                </li>
+                <li class="follow">
+                  <img src="assets/images/Ellipse 3.png" alt="" />
+                  <div class="follow-info">
+                    <div class="follow-info-details">
+                      <h5>Philip</h5>
+                      <p>Product design</p>
+                    </div>
+                    <button type="button">Follow</button>
+                  </div>
+                </li>
+                <li class="follow">
+                  <img src="assets/images/Ellipse 6.png" alt="" />
+                  <div class="follow-info">
+                    <div class="follow-info-details">
+                      <h5>CourtneyCourtney Courtney</h5>
+                      <p>Software Engineer</p>
+                    </div>
+                    <button type="button">Follow</button>
+                  </div>
+                </li>
+              </ul>
+              <div class="link">
+                <button class="more" type="button">See more</button>
+                <i class="fa fa-2x fa-spinner fa-spin"></i>
+              </div>
+            </div>
+
+            <div class="trending">
+              <h5>Trending</h5>
+              <ul>
+                <li class="trend">
+                  <p>1. Trending</p>
+                  <h6>Starbucks</h6>
+                  <span>22k Blab</span>
+                </li>
+                <li class="trend">
+                  <p>2. Trending</p>
+                  <h6>Airbnb</h6>
+                  <span>20k Blab</span>
+                </li>
+                <li class="trend">
+                  <p>3. Trending</p>
+                  <h6>Stargate</h6>
+                  <span>18k Blab</span>
+                </li>
+              </ul>
+              <div class="link">
+                <button class="more" type="button">See more</button>
+                <i class="fa fa-2x fa-spinner fa-spin"></i>
+              </div>
+            </div>
+
+            <div class="advert mt-5">ADVERTISEMENT</div>
+
+            <div class="sidebar-copyright">
+              <a href="terms-of-use.html">Terms</a> &nbsp; &nbsp;
+              <a href="privacy-policy.html">Privacy policy</a>
+              <p>
+                &copy; Copyright
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                BlabEmo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="refresh-prompt">
+      &#8593;
+      <ul>
+        <li>
+          <img src="assets/images/Ellipse 1.png" alt="" />
+        </li>
+        <li>
+          <img src="assets/images/Ellipse 2.png" alt="" />
+        </li>
+        <li>
+          <img src="assets/images/Ellipse 3.png" alt="" />
+        </li>
+      </ul>
+      Blabs
+    </div>
+
+    <!-- Profile Img modal -->
+    <div
+      class="modal fade"
+      id="profileImgModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div
+        class="
+          modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable
+        "
+      >
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body">
+            <h5 class="header">Edit your Image</h5>
+            <div id="profile_img"></div>
+            <ul class="toolbox">
+              <li id="rotateLeft"><i class="fa fa-undo"></i></li>
+              <li id="rotateRight"><i class="fa fa-redo"></i></li>
+              <li>
+                <label for="image_upload">
+                  Choose Image
+                  <input
+                    id="image_upload"
+                    type="file"
+                    accept=".jpg, .png, .jpeg"
+                  />
+                </label>
+              </li>
+            </ul>
+            <div class="profile-switch">
+              <button type="button" class="switch">Use an avatar</button>
+              <button type="button" class="save" id="crop">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Avatar modal -->
+    <div
+      class="modal fade"
+      id="avatarModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div
+        class="
+          modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable
+        "
+      >
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body">
+            <h5 class="header">Choose an avatar</h5>
+            <ul class="avatar-container">
+              <li><img src="assets/images/avatars/avatar-1.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-2.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-3.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-4.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-5.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-6.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-7.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-8.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-9.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-10.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-11.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-12.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-13.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-14.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-15.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-16.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-17.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-18.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-19.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-20.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-21.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-22.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-23.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-24.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-25.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-26.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-27.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-28.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-29.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-30.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-31.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-32.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-33.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-34.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-35.png" alt="" /></li>
+              <li><img src="assets/images/avatars/avatar-36.png" alt="" /></li>
+            </ul>
+            <div class="profile-switch">
+              <button type="button" class="switch">Use an image</button>
+              <button type="button" class="save" id="saveAvatar">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"
+      integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="assets/js/croppie.min.js"></script>
+    <script src="assets/js/twemoji.min.js"></script>
+    <script src="assets/js/jquery.lsxemojipicker.js"></script>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Show loading icon once at bottom
+      jQuery(function ($) {
+        $(".middleDiv").on("scroll", function () {
+          if (
+            $(this).scrollTop() + $(this).innerHeight() >=
+            $(this)[0].scrollHeight
+          ) {
+            $(".refresh-loader .fa-spinner").toggle();
+          }
+        });
+      });
+
+      $(document).on("click", ".blab-icons li", function (e) {
+        $(this).toggleClass("active");
+      });
+
+      $(".picker").lsxEmojiPicker({
+        width: 220,
+        height: 120,
+        twemoji: true,
+        closeOnSelect: false,
+        onSelect: function (emoji) {
+          let currentValue = $("#blabMessage").val();
+          $("#blabMessage").val(
+            currentValue + unicodeToEmoji(emoji.value) + " "
+          );
+          $("#blabMessage").focus();
+        },
+      });
+
+      $(".picker").click(function () {
+        $(".lsx-emojipicker-appender").show();
+      });
+      function unicodeToEmoji(string) {
+        let unicode = string.slice(3);
+        emoji = String.fromCodePoint(parseInt(unicode, 16));
+        return emoji;
+      }
+
+      $("#blabMessage").on("keyup change keydown click focus", function () {
+        let value = $(this).val();
+        let count = value.length;
+        $(".blab-message-count span").html(count);
+
+        if (count >= 250) {
+          $(this).val(value.substr(0, 250));
+        }
+      });
+
+      $("#postBlab").click(function () {
+        let val = $("#blabMessage").val();
+        val = val.replace(
+          /\p{Emoji}/gu,
+          (m, idx) => `&#x${m.codePointAt(0).toString(16)}`
+        );
+        console.log(val.replace("&#x23", "#"));
+      });
+
+      // If the @ or # symbol is pressed
+      $("#blabMessage").keyup(function (e) {
+        let lastKey = $(this).val().slice(-1);
+        if (lastKey == "@") {
+          $(".mentionResults").show();
+        } else if (lastKey == "#") {
+          $(".hashTagResults").show();
+        } else if (lastKey == " " || e.keyCode == 13 || lastKey == "") {
+          $(".mentionResults").hide();
+          $(".hashTagResults").hide();
+        }
+      });
+      $("#blabMessage").keyup(function (e) {
+        $(".lsx-emojipicker-appender").hide();
+      });
+
+      $(".hashTagResults li").click(function () {
+        let hashTag = $(this).find("p").text();
+        let value = $("#blabMessage").val();
+        let lastIndex = value.lastIndexOf("#");
+        value = value.substr(0, lastIndex);
+        $("#blabMessage").val(value + hashTag);
+        $("#blabMessage").focus();
+        $(".hashTagResults").hide();
+      });
+
+      $(".mentionResults li").click(function () {
+        let brand = $(this).find(".mentionedBrandName").text();
+        let value = $("#blabMessage").val();
+        let lastIndex = value.lastIndexOf("@");
+        value = value.substr(0, lastIndex);
+        $("#blabMessage").val(value + "@" + brand);
+        $("#blabMessage").focus();
+        $(".mentionResults").hide();
+      });
+
+      $(".refresh-prompt").click(function () {
+        $(window).scrollTop(0);
+        $(".middleDiv").animate({ scrollTop: $(".middleDiv").offset().top });
+      });
+
+      $(".blab-icons ul li:first-of-type").click(function () {
+        $(this)
+          .parent()
+          .parent()
+          .parent()
+          .parent()
+          .siblings(".comment")
+          .toggleClass("show");
+      });
+
+      // Comment Word Count
+      $(".commentMsg").on("keyup", function () {
+        let dis = $(this);
+        let value = dis.val();
+        let count = 150 - value.length <= 0 ? 0 : 150 - value.length;
+        dis.parent().siblings(".comment-count").find("span").html(count);
+
+        if (count <= 0) {
+          dis.val(value.substr(0, 150));
+          dis.parent().siblings(".comment-count").css("color", "#ED0000");
+        }
+      });
+
+      $(".avatar-container li").click(function () {
+        $(".avatar-container li").removeClass("active");
+        $(this).addClass("active");
+      });
+
+      $(".switch").click(function () {
+        $("#profileImgModal").modal("toggle");
+        $("#avatarModal").modal("toggle");
+      });
+
+      $("#saveAvatar").click(function () {
+        const avatar = $(".avatar-container li.active img").attr("src");
+        $(".profile-img>img").attr("src", avatar);
+        $(".navbar-account>img").attr("src", avatar);
+        $("#avatarModal").modal("toggle");
+      });
+    </script>
+  </body>
+</html>
