@@ -44,28 +44,67 @@ $(function () {
   $(window).on("load", sticky());
 });
 
-$(function () {
-  function sticky2() {
-    if ($(window).innerWidth() > 991) {
-      let divHeight = $(".timeline-right-sidebar").innerHeight();
-      $(".middleDiv").height(divHeight + "px");
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
 
-      // let height = $(".timeline-left-sidebar").height() / 2;
-      // if ($(window).scrollTop() >= height) {
-      //   $(".timeline-left-sidebar").addClass("fixed");
-      // } else if ($(window).scrollTop() < height) {
-      //   $(".timeline-left-sidebar").removeClass("fixed");
-      // }
+const rightBox = document.querySelector(".timeline-right-sidebar");
+const leftBox = document.querySelector(".timeline-left-sidebar");
+const leftDivHeight = $(".timeline-left-sidebar").innerHeight();
+const screenHeight = $(window).innerWidth();
+const divHeight = $(".timeline-right-sidebar").innerHeight();
+
+function sideBarSticky() {
+  if ($(window).innerWidth() > 991) {
+    const position = window.pageYOffset;
+
+    if (position + divHeight >= screenHeight) {
+      if (isInViewport(rightBox)) {
+        $(".timeline-right-sidebar").addClass("fixed");
+      } else {
+        $(".timeline-right-sidebar").removeClass("fixed");
+      }
+    } else if (position < divHeight) {
+      $(".timeline-right-sidebar").removeClass("fixed");
+    }
+
+    if (leftDivHeight > screenHeight) {
+      if (position + leftDivHeight >= screenHeight) {
+        if (isInViewport(leftBox)) {
+          $(".timeline-left-sidebar").addClass("fixed");
+        } else {
+          $(".timeline-left-sidebar").removeClass("fixed");
+        }
+      } else if (position < leftDivHeight) {
+        $(".timeline-left-sidebar").removeClass("fixed");
+      }
+    } else {
+      if (isInViewport(leftBox)) {
+        $(".timeline-left-sidebar").addClass("fixedTop");
+      } else {
+        $(".timeline-left-sidebar").removeClass("fixedTop");
+      }
     }
   }
-  $(window).on("scroll", function () {
-    sticky2();
-  });
-  $(window).on("load", sticky2());
-  $(window).bind("resize", function () {
-    sticky2();
-  });
+}
 
+document.addEventListener("scroll", sideBarSticky, {
+  passive: true,
+});
+document.addEventListener("resize", sideBarSticky, {
+  passive: true,
+});
+document.addEventListener("load", sideBarSticky, {
+  passive: true,
+});
+
+$(function () {
   // Dashboard Alert Close
   $(".alert-close").click(function () {
     $(".dashboard-alert").slideUp();

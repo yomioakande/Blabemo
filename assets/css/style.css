@@ -2614,6 +2614,12 @@ input[type="file"] {
   width: 20.5%;
   transition: all 5s;
 }
+.fixedTop {
+  position: fixed;
+  top: 125px;
+  width: 20.5%;
+  transition: all 5s;
+}
 .middleDiv {
   overflow-y: auto;
 }

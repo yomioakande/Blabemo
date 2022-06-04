@@ -2065,6 +2065,10 @@
 
   <script src="assets/js/main.js"></script>
   <script>
+    
+
+
+
     // Show loading icon once at bottom
     jQuery(function ($) {
       $('.middleDiv').on('scroll', function () {
@@ -2111,6 +2115,7 @@
 
     $('#postBlab').click(function () {
       let val = $("#blabMessage").val();
+      $('.lsx-emojipicker-appender').hide();
       val = val.replace(
         /\p{Emoji}/gu,
         (m, idx) => `&#x${m.codePointAt(0).toString(16)}`
