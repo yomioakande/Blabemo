@@ -853,7 +853,7 @@ img {
 }
 .review-tags-container {
   margin: 25px 0 45px;
-  max-height: 250px;
+  max-height: 400px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -1084,6 +1084,7 @@ img {
   border: 1px solid #f4f4f4;
   margin-bottom: 30px;
   transition: all 5s;
+  padding-bottom: 20px;
 }
 .timeline-right-sidebar {
   padding-bottom: 15px;
@@ -3307,6 +3308,9 @@ input[type="file"] {
   width: 46px;
   height: 46px;
   margin-right: 10px;
+}
+.reviewer-img img{
+  border-radius: 50%;
 }
 .reviewer-info h5 {
   color: #6c6c6c;

@@ -63,32 +63,31 @@ const divHeight = $(".timeline-right-sidebar").innerHeight();
 function sideBarSticky() {
   if ($(window).innerWidth() > 991) {
     const position = window.pageYOffset;
-
-    if (position + divHeight >= screenHeight) {
-      if (isInViewport(rightBox)) {
-        $(".timeline-right-sidebar").addClass("fixed");
-      } else {
+    if ($(".timeline-right-sidebar").length) {
+      if (position + divHeight >= screenHeight) {
+        if (isInViewport(rightBox)) {
+          $(".timeline-right-sidebar").addClass("fixed");
+        } else {
+          $(".timeline-right-sidebar").removeClass("fixed");
+        }
+      } else if (position < divHeight) {
         $(".timeline-right-sidebar").removeClass("fixed");
       }
-    } else if (position < divHeight) {
-      $(".timeline-right-sidebar").removeClass("fixed");
     }
 
-    if (leftDivHeight > screenHeight) {
+    if ($(".timeline-left-sidebar").length) {
       if (position + leftDivHeight >= screenHeight) {
+        console.log("1");
         if (isInViewport(leftBox)) {
+          console.log("2");
           $(".timeline-left-sidebar").addClass("fixed");
         } else {
+          console.log("3");
           $(".timeline-left-sidebar").removeClass("fixed");
         }
       } else if (position < leftDivHeight) {
+        console.log("4");
         $(".timeline-left-sidebar").removeClass("fixed");
-      }
-    } else {
-      if (isInViewport(leftBox)) {
-        $(".timeline-left-sidebar").addClass("fixedTop");
-      } else {
-        $(".timeline-left-sidebar").removeClass("fixedTop");
       }
     }
   }
