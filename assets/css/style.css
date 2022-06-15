@@ -122,8 +122,8 @@ select::-ms-expand {
 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 .form-group {
   margin-bottom: 30px;
@@ -855,7 +855,7 @@ img {
 }
 .review-tags-container {
   margin: 25px 0 45px;
-  max-height: 400px;
+  max-height: 450px;
   overflow-x: hidden;
   overflow-y: scroll;
 }

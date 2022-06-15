@@ -56,38 +56,40 @@ function isInViewport(el) {
 
 const rightBox = document.querySelector(".timeline-right-sidebar");
 const leftBox = document.querySelector(".timeline-left-sidebar");
-const leftDivHeight = $(".timeline-left-sidebar").innerHeight();
-const screenHeight = $(window).innerWidth();
-const divHeight = $(".timeline-right-sidebar").innerHeight();
+const leftDivHeight = leftBox.clientHeight;
+const screenHeight = window.innerHeight;
+const divHeight = rightBox.clientHeight;
+const rightScrollHeight = divHeight + 43 - screenHeight;
+const leftScrollHeight = leftDivHeight + 43 - screenHeight;
 
 function sideBarSticky() {
-  if ($(window).innerWidth() > 991) {
+  if (screenHeight > 991) {
     const position = window.pageYOffset;
     if ($(".timeline-right-sidebar").length) {
-      if (position + divHeight >= screenHeight) {
+      if (position >= rightScrollHeight) {
         if (isInViewport(rightBox)) {
           $(".timeline-right-sidebar").addClass("fixed");
         } else {
           $(".timeline-right-sidebar").removeClass("fixed");
         }
-      } else if (position < divHeight) {
+      } else {
         $(".timeline-right-sidebar").removeClass("fixed");
       }
     }
 
     if ($(".timeline-left-sidebar").length) {
-      if (position + leftDivHeight >= screenHeight) {
-        console.log("1");
-        if (isInViewport(leftBox)) {
-          console.log("2");
-          $(".timeline-left-sidebar").addClass("fixed");
+      if (screenHeight > leftDivHeight) {
+        $(".timeline-left-sidebar").addClass("fixedTop");
+      } else {
+        if (position >= leftScrollHeight) {
+          if (isInViewport(leftBox)) {
+            $(".timeline-left-sidebar").addClass("fixed");
+          } else {
+            $(".timeline-left-sidebar").removeClass("fixed");
+          }
         } else {
-          console.log("3");
           $(".timeline-left-sidebar").removeClass("fixed");
         }
-      } else if (position < leftDivHeight) {
-        console.log("4");
-        $(".timeline-left-sidebar").removeClass("fixed");
       }
     }
   }
