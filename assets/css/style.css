@@ -335,10 +335,12 @@ img {
 }
 .signup-caption {
   height: 100%;
-  width: 50vw;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.signup-caption.w50 {
+  width: 50vw;
 }
 .signup-caption h3 {
   font-family: "Montserrat-Black";
@@ -3312,7 +3314,7 @@ input[type="file"] {
   height: 46px;
   margin-right: 10px;
 }
-.reviewer-img img{
+.reviewer-img img {
   border-radius: 50%;
 }
 .reviewer-info h5 {

@@ -54,18 +54,15 @@ function isInViewport(el) {
   );
 }
 
-const rightBox = document.querySelector(".timeline-right-sidebar");
-const leftBox = document.querySelector(".timeline-left-sidebar");
-const leftDivHeight = leftBox.clientHeight;
 const screenHeight = window.innerHeight;
-const divHeight = rightBox.clientHeight;
-const rightScrollHeight = divHeight + 43 - screenHeight;
-const leftScrollHeight = leftDivHeight + 43 - screenHeight;
 
 function sideBarSticky() {
   if (screenHeight > 991) {
     const position = window.pageYOffset;
     if ($(".timeline-right-sidebar").length) {
+      const rightBox = document.querySelector(".timeline-right-sidebar");
+      const divHeight = rightBox.clientHeight;
+      const rightScrollHeight = divHeight + 43 - screenHeight;
       if (position >= rightScrollHeight) {
         if (isInViewport(rightBox)) {
           $(".timeline-right-sidebar").addClass("fixed");
@@ -78,6 +75,9 @@ function sideBarSticky() {
     }
 
     if ($(".timeline-left-sidebar").length) {
+      const leftBox = document.querySelector(".timeline-left-sidebar");
+      const leftDivHeight = leftBox.clientHeight;
+      const leftScrollHeight = leftDivHeight + 43 - screenHeight;
       if (screenHeight > leftDivHeight) {
         $(".timeline-left-sidebar").addClass("fixedTop");
       } else {
