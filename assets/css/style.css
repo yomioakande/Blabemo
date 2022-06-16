@@ -1912,7 +1912,7 @@ input[type="file"] {
   padding: 10px;
   text-align: center;
   position: relative;
-  z-index: 9999;
+  z-index: 999;
 }
 .blab-alert button,
 .dash-blab-alert button {
