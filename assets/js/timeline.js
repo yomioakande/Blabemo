@@ -31,9 +31,9 @@ function sideBarSticky() {
 
     if ($(".timeline-left-sidebar").length) {
       const leftBox = document.querySelector(".timeline-left-sidebar");
-      const leftDivHeight = leftBox.clientHeight;
-      const leftScrollHeight = leftDivHeight + 43 - screenHeight;
-      if (screenHeight > leftDivHeight) {
+      const leftDivHeight = leftBox.clientHeight + 125;
+      const leftScrollHeight = leftDivHeight - screenHeight - 43;
+      if (screenHeight >= leftDivHeight) {
         $(".timeline-left-sidebar").addClass("fixedTop");
       } else {
         if (position >= leftScrollHeight) {
