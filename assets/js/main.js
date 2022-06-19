@@ -68,10 +68,6 @@ $(document).mouseup(function (e) {
   }
 });
 
-$(".share-icon").click(function () {
-  $(this).siblings(".share-options").toggleClass("show");
-});
-
 // Cookies Alert Dialog
 setTimeout(function () {
   $(".cookies-alert").show();
@@ -211,4 +207,38 @@ $(".dash-info-close").click(function () {
 $(".filters-btn").click(function () {
   $(".filter-search").toggle();
   $(".applied-filters").toggle();
+});
+
+$(function () {
+  // Dashboard Alert Close
+  $(".alert-close").click(function () {
+    $(".dashboard-alert").slideUp();
+  });
+
+  $("#showSideProfile").click(function () {
+    $(".timeline-left-sidebar").toggleClass("show");
+    $(".middleDiv").toggleClass("shadow");
+  });
+  $(".timeline-left-sidebar .close").click(function () {
+    $(".timeline-left-sidebar").toggleClass("show");
+    $(".middleDiv").toggleClass("shadow");
+  });
+  $("#showSidebarSearch").click(function () {
+    $(".timeline-right-sidebar").toggleClass("show");
+    $(".middleDiv").toggleClass("shadow");
+  });
+  $(".timeline-right-sidebar .close").click(function () {
+    $(".timeline-right-sidebar").toggleClass("show");
+    $(".middleDiv").toggleClass("shadow");
+  });
+
+  $("#showReviewSearch").click(function () {
+    $(".peer-review-left-sidebar").toggleClass("show");
+    $("#peerReview").toggleClass("shadow");
+  });
+
+  $(".peer-review-search .close").click(function () {
+    $(".peer-review-left-sidebar").toggleClass("show");
+    $("#peerReview").toggleClass("shadow");
+  });
 });
