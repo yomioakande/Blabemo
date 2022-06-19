@@ -8,10 +8,11 @@ function isInViewport(el) {
   );
 }
 
+const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
 
 function sideBarSticky() {
-  if (screenHeight > 991) {
+  if (screenWidth > 991) {
     const position = window.pageYOffset;
     if ($(".timeline-right-sidebar").length) {
       const rightBox = document.querySelector(".timeline-right-sidebar");
