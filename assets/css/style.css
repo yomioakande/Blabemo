@@ -4617,3 +4617,49 @@ footer p {
   color: #ff6634;
   padding: 10px 0 20px;
 }
+.password-container {
+  position: relative;
+}
+.show-pass {
+  position: absolute;
+  top: 23%;
+  right: 3%;
+}
+.fa-eye {
+  color: #022255;
+  cursor: pointer;
+}
+.password-rules {
+  text-align: left;
+  margin-bottom: 20px;
+  display: none;
+}
+.password-rules li:first-of-type {
+  font-family: 'Montserrat-SemiBold';
+  color: #000000;
+}
+.password-rules li.check,
+.fa-check {
+  color: #02b502;
+}
+.fa-circle {
+  font-size: 6px;
+}
+.password-rules .progress {
+  height: 3px !important;
+  margin-bottom: 10px;
+}
+.progress-bar-danger {
+  background-color: #e90f10;
+}
+.progress-bar-warning {
+  background-color: #ffad00;
+}
+.progress-bar-success {
+  background-color: #02b502;
+}
+.btn-disable {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+}

@@ -104,7 +104,42 @@
 
               <form class="signup-form" action="" method="post">
                 <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <div class="password-container">
+                  <input type="password" placeholder="Password" id="password" />
+                  <span class="show-pass" onclick="toggle()">
+                    <i class="far fa-eye" onclick="myFunction(this)"></i>
+                  </span>
+                </div>
+                <ul class="password-rules">
+                  <div class="progress">
+                    <div
+                      id="password-strength"
+                      class="progress-bar"
+                      role="progressbar"
+                      aria-valuenow="40"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                  <li>Password must contain:</li>
+                  <li class="low-upper-case">
+                    <i class="fas fa-circle" aria-hidden="true"></i>
+                    a lowercase and uppercase letter
+                  </li>
+                  <li class="number">
+                    <i class="fas fa-circle" aria-hidden="true"></i> a number
+                  </li>
+                  <li class="lenght">
+                    <i class="fas fa-circle" aria-hidden="true"></i> at least 8
+                    characters
+                  </li>
+                  <li class="special-char">
+                    <i class="fas fa-circle" aria-hidden="true"></i> a special
+                    character
+                  </li>
+                </ul>
+
                 <label class="checkbox"
                   >I agree to BlabEmo
                   <a
@@ -136,7 +171,7 @@
       <p class="copyright">
         &copy; Copyright
         <script>
-          document.write(new Date().getFullYear());
+          document.write(new Date().getFullYear())
         </script>
         BlabEmo.
       </p>
@@ -536,5 +571,106 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+      let state = false
+      let passwordStrength = document.getElementById('password-strength')
+      let lowUpperCase = document.querySelector('.low-upper-case i')
+      let number = document.querySelector('.number i')
+      let specialChar = document.querySelector('.special-char i')
+      let eightChar = document.querySelector('.lenght i')
+      let signupBtn = document.querySelector('.signup-btn')
+
+      function toggle() {
+        if (state) {
+          document.getElementById('password').setAttribute('type', 'password')
+          state = false
+        } else {
+          document.getElementById('password').setAttribute('type', 'text')
+          state = true
+        }
+      }
+
+      function myFunction(show) {
+        show.classList.toggle('fa-eye-slash')
+      }
+
+      $('#password')
+        .focus(function () {
+          $('.password-rules').slideDown()
+        })
+        .keyup(function () {
+          let pwd = this.value
+          validatePassword(pwd)
+        })
+      // .focusout(function () {
+      //   $('.password-rules').slideUp()
+      // })
+
+      function validatePassword(password) {
+        let strength = 0
+
+        // If password contains both lower and uppercase characters
+        if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
+          strength += 1
+          lowUpperCase.classList.remove('fa-circle')
+          lowUpperCase.classList.add('fa-check')
+        } else {
+          lowUpperCase.classList.add('fa-circle')
+          lowUpperCase.classList.remove('fa-check')
+        }
+
+        // If password contains a number
+        if (password.match(/([0-9])/)) {
+          strength += 1
+          number.classList.remove('fa-circle')
+          number.classList.add('fa-check')
+        } else {
+          number.classList.add('fa-circle')
+          number.classList.remove('fa-check')
+        }
+
+        // If password contains one special character
+        if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
+          strength += 1
+          specialChar.classList.remove('fa-circle')
+          specialChar.classList.add('fa-check')
+        } else {
+          specialChar.classList.add('fa-circle')
+          specialChar.classList.remove('fa-check')
+        }
+
+        // If password is greater than 7
+        if (password.length > 7) {
+          strength += 1
+          eightChar.classList.remove('fa-circle')
+          eightChar.classList.add('fa-check')
+        } else {
+          eightChar.classList.add('fa-circle')
+          eightChar.classList.remove('fa-check')
+        }
+
+        // check password strength value
+        if (strength < 2) {
+          passwordStrength.classList.remove('progress-bar-warning')
+          passwordStrength.classList.remove('progress-bar-success')
+          passwordStrength.classList.add('progress-bar-danger')
+          passwordStrength.style = 'width: 10%'
+          signupBtn.classList.add('btn-disable')
+        } else if (strength == 3) {
+          passwordStrength.classList.remove('progress-bar-success')
+          passwordStrength.classList.remove('progress-bar-danger')
+          passwordStrength.classList.add('progress-bar-warning')
+          passwordStrength.style = 'width: 60%'
+          signupBtn.classList.add('btn-disable')
+        } else if (strength == 4) {
+          passwordStrength.classList.remove('progress-bar-warning')
+          passwordStrength.classList.remove('progress-bar-danger')
+          passwordStrength.classList.add('progress-bar-success')
+          passwordStrength.style = 'width: 100%'
+          signupBtn.classList.remove('btn-disable')
+        }
+      }
+    </script>
   </body>
 </html>
