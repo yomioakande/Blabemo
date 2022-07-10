@@ -2710,7 +2710,7 @@ input[type='file'] {
 }
 .quote {
   position: absolute;
-  bottom: 70px;
+  bottom: 40px;
   left: 40px;
   max-width: 55%;
   width: fit-content;
