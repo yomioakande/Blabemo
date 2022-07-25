@@ -806,7 +806,7 @@ img {
   color: #a5a5a5;
   cursor: pointer;
   position: relative;
-  vertical-align: middle;
+  vertical-align: top;
 }
 .input-rating .icon {
   height: 35px;
@@ -4376,7 +4376,8 @@ footer p {
   .b1 .review {
     bottom: 5%;
     left: -10px;
-    width: 130px;
+    width: 180px;
+    max-width: 90vw;
   }
   .b1 .employee-reviews {
     right: 5%;
@@ -4406,6 +4407,13 @@ footer p {
   .b1 .hero-chart {
     top: 5%;
     left: 5%;
+  }
+  .b1 .review-tags h5,
+  .b1 .review-tags span {
+    font-size: 8px;
+  }
+  .b1 .review-tags span img {
+    width: 9px;
   }
   .hero-img img {
     width: 100%;

@@ -182,7 +182,7 @@
                             id="star2"
                             value="2"
                           />
-                          <p>Irate</p>
+                          <p>Angry</p>
                         </label>
                       </li>
                       <li class="star3">
@@ -194,7 +194,7 @@
                             id="star3"
                             value="3"
                           />
-                          <p>Angry</p>
+                          <p>Indifferent</p>
                         </label>
                       </li>
                       <li class="star4">
@@ -206,7 +206,7 @@
                             id="star4"
                             value="4"
                           />
-                          <p>Dissatisfied</p>
+                          <p>Satisfied</p>
                         </label>
                       </li>
                       <li class="star5">
@@ -218,7 +218,7 @@
                             id="star5"
                             value="5"
                           />
-                          <p>Indifferent</p>
+                          <p>Very Satisfied</p>
                         </label>
                       </li>
                       <li id="rating">0.0</li>
@@ -562,7 +562,7 @@
           <p class="copyright">
             &copy; Copyright
             <script>
-              document.write(new Date().getFullYear());
+              document.write(new Date().getFullYear())
             </script>
             BlabEmo.
           </p>
@@ -1041,60 +1041,60 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-      $("#postReview").click(function () {
+      $('#postReview').click(function () {
         swal(
-          "Thanks!",
-          "Your review has been successfully submitted.",
-          "success"
-        );
-      });
-      $("#year").datepicker({
-        format: "yyyy",
-        viewMode: "years",
-        minViewMode: "years",
-        endDate: "+0d",
-        autoclose: true,
-      });
+          'Thanks!',
+          'Your review has been successfully submitted.',
+          'success'
+        )
+      })
+      $('#year').datepicker({
+        format: 'yyyy',
+        viewMode: 'years',
+        minViewMode: 'years',
+        endDate: '+0d',
+        autoclose: true
+      })
 
-      let ratingVal = null;
-      $("input[type=radio][name=rating]").change(function () {
-        let val = this.value;
-        $(".input-rating .icon").removeClass("show");
-        $(".star" + val + " .icon").addClass("show");
-        ratingVal = val + ".0";
-        $("#rating").text(ratingVal);
-      });
+      let ratingVal = null
+      $('input[type=radio][name=rating]').change(function () {
+        let val = this.value
+        $('.input-rating .icon').removeClass('show')
+        $('.star' + val + ' .icon').addClass('show')
+        ratingVal = val + '.0'
+        $('#rating').text(ratingVal)
+      })
 
-      $(".star1").mouseover(function () {
-        $("#rating").text("1.0");
-      });
-      $(".star2").mouseover(function () {
-        $("#rating").text("2.0");
-      });
-      $(".star3").mouseover(function () {
-        $("#rating").text("3.0");
-      });
-      $(".star4").mouseover(function () {
-        $("#rating").text("4.0");
-      });
-      $(".star5").mouseover(function () {
-        $("#rating").text("5.0");
-      });
-      $(".star1, .star2, .star3, .star4, .star5").mouseleave(function () {
+      $('.star1').mouseover(function () {
+        $('#rating').text('1.0')
+      })
+      $('.star2').mouseover(function () {
+        $('#rating').text('2.0')
+      })
+      $('.star3').mouseover(function () {
+        $('#rating').text('3.0')
+      })
+      $('.star4').mouseover(function () {
+        $('#rating').text('4.0')
+      })
+      $('.star5').mouseover(function () {
+        $('#rating').text('5.0')
+      })
+      $('.star1, .star2, .star3, .star4, .star5').mouseleave(function () {
         if (ratingVal !== null) {
-          $("#rating").text(ratingVal);
+          $('#rating').text(ratingVal)
         } else {
-          $("#rating").text("0.0");
+          $('#rating').text('0.0')
         }
-      });
+      })
 
-      $("#consent").change(function () {
+      $('#consent').change(function () {
         if (this.checked) {
-          $(".signup-options button").prop("disabled", false);
+          $('.signup-options button').prop('disabled', false)
         } else {
-          $(".signup-options button").prop("disabled", true);
+          $('.signup-options button').prop('disabled', true)
         }
-      });
+      })
     </script>
   </body>
 </html>

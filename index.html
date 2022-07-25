@@ -163,6 +163,13 @@
                   Great place to work with the good work culture and people
                   skills.
                 </p>
+                <div class="review-tags">
+                  <h5>Sexual Assault</h5>
+                  <span>
+                    <img src="assets/images/Vector.svg" alt="" />
+                    Facebook
+                  </span>
+                </div>
               </div>
               <div class="reviewer">
                 <div class="reviewer-img">
@@ -534,7 +541,7 @@
           <p class="copyright">
             &copy; Copyright
             <script>
-              document.write(new Date().getFullYear());
+              document.write(new Date().getFullYear())
             </script>
             BlabEmo.
           </p>
@@ -703,16 +710,16 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-      $("#heroSearch").keyup(function () {
-        let searchQuery = $(this).val();
+      $('#heroSearch').keyup(function () {
+        let searchQuery = $(this).val()
         if (searchQuery.length > 0) {
-          $(".hero-search-result").show();
+          $('.hero-search-result').show()
         } else {
-          $(".hero-search-result").hide();
+          $('.hero-search-result').hide()
         }
-      });
+      })
 
-      $("#clients").slick({
+      $('#clients').slick({
         slidesToShow: 5,
         slidesToScroll: 5,
         autoplay: true,
@@ -722,25 +729,25 @@
             breakpoint: 1024,
             settings: {
               slidesToShow: 5,
-              slidesToScroll: 5,
-            },
+              slidesToScroll: 5
+            }
           },
           {
             breakpoint: 600,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 3,
-            },
+              slidesToScroll: 3
+            }
           },
           {
             breakpoint: 480,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2,
-            },
-          },
-        ],
-      });
+              slidesToScroll: 2
+            }
+          }
+        ]
+      })
     </script>
   </body>
 </html>
