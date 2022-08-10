@@ -595,13 +595,15 @@ img {
 /* ########## Cookie Alert Modal End ########## */
 /* ########## About Us, Terms of Use, Privacy policy, Contact Us Page ########## */
 .about-hero {
-  background: url('../images/about-hero.png') center;
+  background: url('../images/about-hero2.png') center;
   background-size: cover;
-  padding: 150px 15px;
 }
-.about-hero h3 {
+.about-hero-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 280px 15px 20px;
+}
+.about-hero h4 {
   font-family: 'Montserrat-ExtraBold';
-  font-size: calc(18px + (28 - 18) * ((100vw - 300px) / 1300));
   color: #ffffff;
   width: 55%;
   margin: 0 auto;
@@ -2815,7 +2817,7 @@ input[type='file'] {
   position: absolute;
   bottom: 10%;
   left: -10%;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.55);
   width: 280px;
   margin: 0;
 }
@@ -2827,7 +2829,7 @@ input[type='file'] {
   position: absolute;
   right: 8%;
   top: 25%;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.55);
   border-radius: 6px;
   padding: 10px 15px;
   text-align: center;
@@ -2839,7 +2841,7 @@ input[type='file'] {
   position: absolute;
   top: 20%;
   left: 20%;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.55);
   border-radius: 6px;
   padding: 10px;
 }
